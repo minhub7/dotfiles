@@ -1,4 +1,6 @@
 require('base')
-require('plugins')
 require('settings')
+require('plugins')
 require('maps')
+require('lsp-config')
+require('barbar')

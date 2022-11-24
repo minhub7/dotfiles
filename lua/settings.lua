@@ -1,13 +1,20 @@
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.cmd.colorscheme("tokyonight-moon")
 
+
+require('lualine').setup{ options={ theme='tokyonight' }}
 
 require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = { adaptive_size = true, mappings={ list={{ key = "u", action = "dir_up" }}}},
-  renderer = { group_empty = true },
-  filters = { dotfiles = true },
+    open_on_setup = true,
+    open_on_setup_file = true,
+    view = {
+        adaptive_size = true,
+        mappings = { list = {{ key="u", action="dir_up" }}}
+    },
+    renderer = { group_empty = true },
+    filters = { dotfiles = true },
 })
 
 require'nvim-treesitter.configs'.setup {
@@ -35,3 +42,10 @@ require'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+
+require('telescope').setup{
+    defaults = { mappings = { i = {} } },
+    pickers = { find_files={ theme="dropdown" } },
+    extensions = {}
+}
+
