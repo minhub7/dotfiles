@@ -9,6 +9,7 @@ local options = {
     title=true,
     backup=false,
     number=true,
+    relativenumber=true,
     mouse="a",
     autoindent=true,
     smartindent=true,
