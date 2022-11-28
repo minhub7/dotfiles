@@ -11,9 +11,11 @@ require("nvim-tree").setup({
     open_on_setup_file = true,
     view = {
         adaptive_size = true,
-        mappings = { list = {{ key="u", action="dir_up" }}}
+        mappings = { list = {{ key="u", action="dir_up" }}},
     },
-    renderer = { group_empty = true },
+    renderer = {
+        group_empty = true,
+    },
     filters = { dotfiles = true },
 })
 

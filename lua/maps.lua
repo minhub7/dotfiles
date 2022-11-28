@@ -3,6 +3,12 @@ function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, { noremap=true, silent=true })
 end
 
+function nimap(shortcut, command)
+    map('n', shortcut, command)
+    map('i', shortcut, command)
+end
+
+
 function nmap(shortcut, command) map('n', shortcut, command) end
 function imap(shortcut, command) map('i', shortcut, command) end
 function vmap(shortcut, command) map('v', shortcut, command) end
@@ -13,10 +19,11 @@ function fmap(shortcut, func, args) vim.keymap.set('n', shortcut, func, args) en
 -- general
 nmap('<leader>svr', '<cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
 nmap('<C-x>', 'dd')  -- one line delete ctrl + x
+nmap('<Tab>', '>>')
+nmap('<S-Tab>', '<<')
 
 -- file io
-nmap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-imap('<C-s>', '<cmd>w<CR>')
+nimap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
 nmap('<S-q>', '<cmd>qa<CR>')  -- close file using shift + q
 
 -- Split window
@@ -31,10 +38,10 @@ vim.opt.splitright = true
 
 -- PLUGINS
 -- toggleterm
-nmap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
-nmap('<F3>', '<Cmd>ToggleTerm size=40 direction=vertical ToggleTermSetName t2<CR>')
-nmap('<F4>', '<Cmd>ToggleTerm size=10 direction=float ToggleTermSetName t3<CR>')
-nmap('<F9>', '<Cmd>TermExec cmd="python %:p"<CR>')
+nimap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
+nimap('<F3>', '<Cmd>ToggleTerm size=40 direction=vertical ToggleTermSetName t2<CR>')
+nimap('<F4>', '<Cmd>ToggleTerm size=10 direction=float ToggleTermSetName t3<CR>')
+nimap('<F9>', '<Cmd>TermExec cmd="python %:p"<CR>')
 tmap('<Esc>', '<Cmd>NvimTreeFocus<CR>')
 tmap('<C-h>', '<Cmd>wincmd h<CR>')
 tmap('<C-j>', '<Cmd>wincmd j<CR>')
@@ -52,22 +59,22 @@ fmap('<leader>fb', require('telescope.builtin').buffers, {})
 fmap('<leader>fh', require('telescope.builtin').help_tags, {})
 
 -- barbar
-nmap('<A-left>', '<Cmd>BufferPrevious<CR>')    -- move to previous
-nmap('<A-right>', '<Cmd>BufferNext<CR>')    -- move to next
-nmap('<S-A-left>', '<Cmd>BufferMovePrevious<CR>')    -- re-order to previous
-nmap('<S-A-right>', '<Cmd>BufferMoveNext<CR>')    -- re-order to next
-nmap('<A-p>', '<Cmd>BufferPin<CR>')    -- Pin buffer
-nmap('<A-q>', '<Cmd>BufferClose<CR>')    -- close buffer  
-nmap('<A-1>', '<Cmd>BufferGoto 1<CR>')  -- move to specific bar
-nmap('<A-2>', '<Cmd>BufferGoto 2<CR>')
-nmap('<A-3>', '<Cmd>BufferGoto 3<CR>')
-nmap('<A-4>', '<Cmd>BufferGoto 4<CR>')
-nmap('<A-5>', '<Cmd>BufferGoto 5<CR>')
-nmap('<A-6>', '<Cmd>BufferGoto 6<CR>')
-nmap('<A-7>', '<Cmd>BufferGoto 7<CR>')
-nmap('<A-8>', '<Cmd>BufferGoto 8<CR>')
-nmap('<A-9>', '<Cmd>BufferGoto 9<CR>')
-nmap('<A-0>', '<Cmd>BufferLast<CR>')
+nimap('<A-left>', '<Cmd>BufferPrevious<CR>')    -- move to previous
+nimap('<A-right>', '<Cmd>BufferNext<CR>')    -- move to next
+nimap('<S-A-left>', '<Cmd>BufferMovePrevious<CR>')    -- re-order to previous
+nimap('<S-A-right>', '<Cmd>BufferMoveNext<CR>')    -- re-order to next
+nimap('<A-p>', '<Cmd>BufferPin<CR>')    -- Pin buffer
+nimap('<A-q>', '<Cmd>BufferClose<CR>')    -- close buffer  
+nimap('<A-1>', '<Cmd>BufferGoto 1<CR>')  -- move to specific bar
+nimap('<A-2>', '<Cmd>BufferGoto 2<CR>')
+nimap('<A-3>', '<Cmd>BufferGoto 3<CR>')
+nimap('<A-4>', '<Cmd>BufferGoto 4<CR>')
+nimap('<A-5>', '<Cmd>BufferGoto 5<CR>')
+nimap('<A-6>', '<Cmd>BufferGoto 6<CR>')
+nimap('<A-7>', '<Cmd>BufferGoto 7<CR>')
+nimap('<A-8>', '<Cmd>BufferGoto 8<CR>')
+nimap('<A-9>', '<Cmd>BufferGoto 9<CR>')
+nimap('<A-0>', '<Cmd>BufferLast<CR>')
 
 -- Find files using Telescope command-line sugar.
 -- nmap("<C-p>", "<cmd>Telescope find_files<cr>")
