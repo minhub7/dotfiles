@@ -8,6 +8,13 @@ function nimap(shortcut, command)
     map('i', shortcut, command)
 end
 
+-- Modes
+--   normal = "n",
+--   insert = "i",
+--   visual = "v",
+--   visual_block = "x",
+--   command = "c",
+--   terminal = "t",
 
 function nmap(shortcut, command) map('n', shortcut, command) end
 function imap(shortcut, command) map('i', shortcut, command) end
@@ -26,15 +33,21 @@ nmap('<S-Tab>', '<<')
 nimap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
 nmap('<S-q>', '<cmd>qa<CR>')  -- close file using shift + q
 
--- Split window
-nmap('hs', '<C-w>s')
-nmap('vs', '<C-w>v')
+-- window navigation
 nmap('<C-h>', '<C-w>h')
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
-vim.opt.splitbelow = true
-vim.opt.splitright = true
+
+-- Split window
+nmap('hs', '<C-w>s')
+nmap('vs', '<C-w>v')
+
+-- Resize window with arrows
+nmap('<C-up>', ':resize +2<CR>')
+nmap('<C-down>', ':resize -2<CR>')
+nmap("<C-left>", ":vertical resize -2<CR>")
+nmap("<C-right>", ":vertical resize +2<CR>")
 
 -- PLUGINS
 -- toggleterm
