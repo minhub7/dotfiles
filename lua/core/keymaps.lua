@@ -104,6 +104,3 @@ nimap('<A-0>', '<Cmd>BufferLast<CR>')
 -- git
 --nmap('<C-g>', '<cmd>GitMessenger<cr>')
 
-
-
--- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})

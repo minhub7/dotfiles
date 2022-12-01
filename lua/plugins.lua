@@ -8,13 +8,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd.packadd("packer.nvim")
 end
 
--- Autocommand taht reloads neovim
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-]])
+-- Autocommand that reloads neovim
+-- vim.cmd([[
+--    augroup packer_user_config
+--        autocmd!
+--        autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--    augroup end
+-- ]])
 
 
 -- Protected call
@@ -37,14 +37,10 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'  -- Package manager
 
 	-- common
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
-	use {'nvim-treesitter/nvim-treesitter', run=function() require('nvim-treesitter.install').update({ with_sync=ture }) end}  -- configurations for nvim-treesitter
-	use {'nvim-tree/nvim-tree.lua', requires={ 'nvim-tree/nvim-web-devicons' }, tag='nightly'}  -- configurations for nvim-tree (file explorer/in sidebar)
-    use {'romgrk/barbar.nvim', wants='nvim-web-devicons'}
-    use {'nvim-telescope/telescope.nvim', tag='0.1.0', requires={ 'nvim-lua/plenary.nvim' }}  -- configurations for fuzzy finder (file explorer)
-    use {'nvim-lualine/lualine.nvim', requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
-    use {'akinsho/toggleterm.nvim', tag='*', config=function() require('toggleterm').setup() end}
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-tree/nvim-web-devicons'
+    use 'numToStr/Comment.nvim'
 
 	-- Utilities
 	-- use {'iamcco/markdown-preview.nvim', run=function() vim.fn['mkdp#util#install']() end}  -- markdown preview on local website
@@ -59,7 +55,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-nvim-lua'
-	use {'windwp/nvim-autopairs', run=function() require('nvim-autopairs').setup{} end}
+	use 'windwp/nvim-autopairs'
 
     -- LSP
 	use 'neovim/nvim-lspconfig'
@@ -75,6 +71,24 @@ return require('packer').startup(function(use)
 	-- colorscheme or themes
     use 'norcalli/nvim-colorizer.lua'
 	use 'folke/tokyonight.nvim'
+
+    -- tree & treesitter
+    use {'nvim-tree/nvim-tree.lua', tag='nightly'}  -- configurations for nvim-tree (file explorer/in sidebar)
+    use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}  -- configurations for nvim-treesitter
+    use 'p00f/nvim-ts-rainbow'
+    use 'nvim-treesitter/playground'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+    -- telescope
+    use 'nvim-telescope/telescope.nvim'  -- configurations for fuzzy finder (file explorer)
+    use 'nvim-telescope/telescope-media-files.nvim'
+
+	use 'vim-airline/vim-airline'
+	use 'vim-airline/vim-airline-themes'
+    use {'romgrk/barbar.nvim', wants='nvim-web-devicons'}
+    use {'nvim-lualine/lualine.nvim', requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
+    use {'akinsho/toggleterm.nvim', tag='*', config=function() require('toggleterm').setup() end}
+
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
