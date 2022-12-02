@@ -66,5 +66,5 @@ for k, v in pairs(options) do
 end
     -- clipboard
     vim.opt.clipboard:append("unnamedplus")
-    vim.opt.iskeyword:append("-")
+--    vim.opt.iskeyword:append("-")
     

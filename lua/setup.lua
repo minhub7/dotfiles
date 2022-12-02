@@ -22,7 +22,7 @@ local status, packer = pcall(require, "packer")
 if not status then
     return
 end
-
+ 
 -- Have packer use a popup window
 packer.init {
     display = {
@@ -39,14 +39,11 @@ return require('packer').startup(function(use)
 	-- common
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'nvim-tree/nvim-web-devicons'
     use 'numToStr/Comment.nvim'
+    use 'nvim-tree/nvim-web-devicons'
+    use 'nvim-tree/nvim-tree.lua'  -- configurations for nvim-tree (file explorer/in sidebar)
 
 	-- Utilities
-	-- use {'iamcco/markdown-preview.nvim', run=function() vim.fn['mkdp#util#install']() end}  -- markdown preview on local website
-	use 'lukas-reineke/indent-blankline.nvim'
-	use 'plasticboy/vim-markdown'
-
 	-- configurations for auto completion
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-buffer'
@@ -73,7 +70,6 @@ return require('packer').startup(function(use)
 	use 'folke/tokyonight.nvim'
 
     -- tree & treesitter
-    use {'nvim-tree/nvim-tree.lua', tag='nightly'}  -- configurations for nvim-tree (file explorer/in sidebar)
     use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}  -- configurations for nvim-treesitter
     use 'p00f/nvim-ts-rainbow'
     use 'nvim-treesitter/playground'
@@ -82,12 +78,18 @@ return require('packer').startup(function(use)
     -- telescope
     use 'nvim-telescope/telescope.nvim'  -- configurations for fuzzy finder (file explorer)
     use 'nvim-telescope/telescope-media-files.nvim'
+    
+    -- gitsigns
+    use 'lewis6991/gitsigns.nvim'
 
-	use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
     use {'romgrk/barbar.nvim', wants='nvim-web-devicons'}
-    use {'nvim-lualine/lualine.nvim', requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
+    use {'nvim-lualine/lualine.nvim', requires={ 'nvim-tree/nvim-web-devicons', opt=true }} -- or kyazdani42/nvim-web-devicons
     use {'akinsho/toggleterm.nvim', tag='*', config=function() require('toggleterm').setup() end}
+	-- use {'iamcco/markdown-preview.nvim', run=function() vim.fn['mkdp#util#install']() end}  -- markdown preview on local website
+	use 'lukas-reineke/indent-blankline.nvim'
+	use 'plasticboy/vim-markdown'
 
 
     if PACKER_BOOTSTRAP then

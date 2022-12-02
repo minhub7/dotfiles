@@ -21,10 +21,13 @@ function imap(shortcut, command) map('i', shortcut, command) end
 function vmap(shortcut, command) map('v', shortcut, command) end
 function cmap(shortcut, command) map('c', shortcut, command) end
 function tmap(shortcut, command) map('t', shortcut, command) end
-function fmap(shortcut, func, args) vim.keymap.set('n', shortcut, func, args) end
 
--- general
-nmap('<leader>svr', '<cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
+vim.g.mapleader = ' '
+
+--------------
+-- General
+--------------
+nmap('<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
 nmap('<C-x>', 'dd')  -- one line delete ctrl + x
 nmap('<Tab>', '>>')
 nmap('<S-Tab>', '<<')
@@ -39,9 +42,11 @@ nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-l>', '<C-w>l')
 
--- Split window
-nmap('hs', '<C-w>s')
-nmap('vs', '<C-w>v')
+-- Window management
+nmap('sh', '<C-w>s') -- split horizontal
+nmap('sv', '<C-w>v') -- split vertical
+nmap('se', '<C-w>=') -- make split windows equal width & height
+nmap('sq', '<Cmd>close<CR>')
 
 -- Resize window with arrows
 nmap('<C-up>', ':resize +2<CR>')
@@ -49,27 +54,29 @@ nmap('<C-down>', ':resize -2<CR>')
 nmap("<C-left>", ":vertical resize -2<CR>")
 nmap("<C-right>", ":vertical resize +2<CR>")
 
--- PLUGINS
+--------------
+-- Plugins
+--------------
 -- toggleterm
 nimap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
-nimap('<F3>', '<Cmd>ToggleTerm size=40 direction=vertical ToggleTermSetName t2<CR>')
+nimap('<F3>', '<Cmd>ToggleTerm size=40 direction=[vertical, horizontal] ToggleTermSetName t2<CR>')
 nimap('<F4>', '<Cmd>ToggleTerm size=10 direction=float ToggleTermSetName t3<CR>')
 nimap('<F9>', '<Cmd>TermExec cmd="python %:p"<CR>')
-tmap('<Esc>', '<Cmd>NvimTreeFocus<CR>')
+tmap('<Esc>', '<C-\\><C-n>')
 tmap('<C-h>', '<Cmd>wincmd h<CR>')
 tmap('<C-j>', '<Cmd>wincmd j<CR>')
 tmap('<C-k>', '<Cmd>wincmd k<CR>')
 tmap('<C-l>', '<Cmd>wincmd l<CR>')
 
 -- nvim-tree
-nmap('{', "<cmd>NvimTreeToggle<CR>")
-nmap('}', "<cmd>NvimTreeFocus<CR>")
+nmap('<leader>[', "<Cmd>NvimTreeToggle<CR>")
+nmap('<leader>]', "<Cmd>NvimTreeFocus<CR>")
 
 -- telescope
-fmap('<leader>ff', require('telescope.builtin').find_files, {})
-fmap('<leader>fg', require('telescope.builtin').live_grep, {})
-fmap('<leader>fb', require('telescope.builtin').buffers, {})
-fmap('<leader>fh', require('telescope.builtin').help_tags, {})
+nmap('<leader>ff', "<Cmd>Telescope find_files<CR>")
+nmap('<leader>fg', "<Cmd>Telescope live_grep<CR>")
+nmap('<leader>fb', "<Cmd>Telescope buffers<CR>")
+nmap('<leader>fh', "<Cmd>Telescope help_tags<CR>")
 
 -- barbar
 nimap('<A-left>', '<Cmd>BufferPrevious<CR>')    -- move to previous
@@ -88,12 +95,6 @@ nimap('<A-7>', '<Cmd>BufferGoto 7<CR>')
 nimap('<A-8>', '<Cmd>BufferGoto 8<CR>')
 nimap('<A-9>', '<Cmd>BufferGoto 9<CR>')
 nimap('<A-0>', '<Cmd>BufferLast<CR>')
-
--- Find files using Telescope command-line sugar.
--- nmap("<C-p>", "<cmd>Telescope find_files<cr>")
--- nmap("<leader>f", "<cmd>Telescope live_grep<cr>")
--- nmap("<leader>bb", "<cmd>Telescope buffers<cr>")
--- nmap("<leader>hh", "<cmd>Telescope help_tags<cr>")
 
 -- LSP
 --nmap('K', '<cmd>Lspsaga hover_doc<cr>')
