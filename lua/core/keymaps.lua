@@ -1,12 +1,4 @@
 -- Key mappings file
-function map(mode, shortcut, command)
-    vim.api.nvim_set_keymap(mode, shortcut, command, { noremap=true, silent=true })
-end
-
-function nimap(shortcut, command)
-    map('n', shortcut, command)
-    map('i', shortcut, command)
-end
 
 -- Modes
 --   normal = "n",
@@ -16,67 +8,73 @@ end
 --   command = "c",
 --   terminal = "t",
 
-function nmap(shortcut, command) map('n', shortcut, command) end
-function imap(shortcut, command) map('i', shortcut, command) end
-function vmap(shortcut, command) map('v', shortcut, command) end
-function cmap(shortcut, command) map('c', shortcut, command) end
-function tmap(shortcut, command) map('t', shortcut, command) end
+function map(mode, shortcut, command)
+    vim.api.nvim_set_keymap(mode, shortcut, command, { noremap=true, silent=true })
+end
+
+function nimap(shortcut, command)
+    map('n', shortcut, command)
+    map('i', shortcut, command)
+end
 
 vim.g.mapleader = ' '
 
 --------------
 -- General
 --------------
-nmap('<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
-nmap('<C-x>', 'dd')  -- one line delete ctrl + x
-nmap('<Tab>', '>>')
-nmap('<S-Tab>', '<<')
+map('n', '<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
+map('n', '<C-x>', 'dd')  -- one line delete ctrl + x
+map('n', '<Tab>', '>>')
+map('n', '<S-Tab>', '<<')
+
 
 -- file io
 nimap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-nmap('<S-q>', '<cmd>qa<CR>')  -- close file using shift + q
+map('n', '<S-q>', '<cmd>qa<CR>')  -- close file using shift + q
 
 -- window navigation
-nmap('<C-h>', '<C-w>h')
-nmap('<C-j>', '<C-w>j')
-nmap('<C-k>', '<C-w>k')
-nmap('<C-l>', '<C-w>l')
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+map('t', '<Esc>', '<C-\\><C-n>')
+map('t', '<C-h>', '<Cmd>wincmd h<CR>')
+map('t', '<C-j>', '<Cmd>wincmd j<CR>')
+map('t', '<C-k>', '<Cmd>wincmd k<CR>')
+map('t', '<C-l>', '<Cmd>wincmd l<CR>')
 
 -- Window management
-nmap('sh', '<C-w>s') -- split horizontal
-nmap('sv', '<C-w>v') -- split vertical
-nmap('se', '<C-w>=') -- make split windows equal width & height
-nmap('sq', '<Cmd>close<CR>')
+map('n', 'sh', '<C-w>s') -- split horizontal
+map('n', 'sv', '<C-w>v') -- split vertical
+map('n', 'se', '<C-w>=') -- make split windows equal width & height
+map('n', 'sq', '<Cmd>close<CR>')
 
 -- Resize window with arrows
-nmap('<C-up>', ':resize +2<CR>')
-nmap('<C-down>', ':resize -2<CR>')
-nmap("<C-left>", ":vertical resize -2<CR>")
-nmap("<C-right>", ":vertical resize +2<CR>")
+map('n', '<C-up>', ':resize +2<CR>')
+map('n', '<C-down>', ':resize -2<CR>')
+map('n', "<C-left>", ":vertical resize -2<CR>")
+map('n', "<C-right>", ":vertical resize +2<CR>")
 
 --------------
 -- Plugins
 --------------
+-- Comment
+vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
+
 -- toggleterm
 nimap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
-nimap('<F3>', '<Cmd>ToggleTerm size=40 direction=[vertical, horizontal] ToggleTermSetName t2<CR>')
+nimap('<F3>', '<Cmd>ToggleTerm size=40 direction=vertical ToggleTermSetName t2<CR>')
 nimap('<F4>', '<Cmd>ToggleTerm size=10 direction=float ToggleTermSetName t3<CR>')
 nimap('<F9>', '<Cmd>TermExec cmd="python %:p"<CR>')
-tmap('<Esc>', '<C-\\><C-n>')
-tmap('<C-h>', '<Cmd>wincmd h<CR>')
-tmap('<C-j>', '<Cmd>wincmd j<CR>')
-tmap('<C-k>', '<Cmd>wincmd k<CR>')
-tmap('<C-l>', '<Cmd>wincmd l<CR>')
 
 -- nvim-tree
-nmap('<leader>[', "<Cmd>NvimTreeToggle<CR>")
-nmap('<leader>]', "<Cmd>NvimTreeFocus<CR>")
+map('n', '<S-t>', "<Cmd>NvimTreeToggle<CR>")
 
 -- telescope
-nmap('<leader>ff', "<Cmd>Telescope find_files<CR>")
-nmap('<leader>fg', "<Cmd>Telescope live_grep<CR>")
-nmap('<leader>fb', "<Cmd>Telescope buffers<CR>")
-nmap('<leader>fh', "<Cmd>Telescope help_tags<CR>")
+map('n', '<leader>ff', "<Cmd>Telescope find_files<CR>")
+map('n', '<leader>fg', "<Cmd>Telescope live_grep<CR>")
+map('n', '<leader>fb', "<Cmd>Telescope buffers<CR>")
+map('n', '<leader>fh', "<Cmd>Telescope help_tags<CR>")
 
 -- barbar
 nimap('<A-left>', '<Cmd>BufferPrevious<CR>')    -- move to previous

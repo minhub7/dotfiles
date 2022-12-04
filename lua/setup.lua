@@ -34,62 +34,63 @@ packer.init {
 
 -- Install plugins
 return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'  -- Package manager
+	use "wbthomason/packer.nvim"  -- Package manager
 
 	-- common
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'numToStr/Comment.nvim'
-    use 'nvim-tree/nvim-web-devicons'
-    use 'nvim-tree/nvim-tree.lua'  -- configurations for nvim-tree (file explorer/in sidebar)
+    use "nvim-lua/popup.nvim"
+    use "nvim-lua/plenary.nvim"
+    use "numToStr/Comment.nvim"
+    use "nvim-tree/nvim-web-devicons"
+    use "nvim-tree/nvim-tree.lua"  -- configurations for nvim-tree (file explorer/in sidebar)
+    use "tpope/vim-surround"  -- add, delete, change surroundings
 
 	-- Utilities
-	-- configurations for auto completion
-	use 'hrsh7th/nvim-cmp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/cmp-path'
-	use 'hrsh7th/cmp-cmdline'
-    use 'saadparwaiz1/cmp_luasnip'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-nvim-lua'
-	use 'windwp/nvim-autopairs'
+	-- Auto completion
+	use "hrsh7th/nvim-cmp"
+	use "hrsh7th/cmp-buffer"
+	use "hrsh7th/cmp-path"
+	use "hrsh7th/cmp-cmdline"
+    use "saadparwaiz1/cmp_luasnip"
+	use "hrsh7th/cmp-nvim-lsp"
+	use "hrsh7th/cmp-nvim-lua"
+	use "windwp/nvim-autopairs"
 
     -- LSP
-	use 'neovim/nvim-lspconfig'
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'jose-elias-alvarez/null-ls.nvim'
-	use 'glepnir/lspsaga.nvim' -- LSP UI's
+	use "neovim/nvim-lspconfig"
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use "jose-elias-alvarez/null-ls.nvim"
+	use "glepnir/lspsaga.nvim" -- LSP UI's
 
     -- snippets
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
-	-- colorscheme or themes
-    use 'norcalli/nvim-colorizer.lua'
-	use 'folke/tokyonight.nvim'
+	-- Colorscheme & status
+    use "EdenEast/nightfox.nvim"
+    use "feline-nvim/feline.nvim"
+    use {"romgrk/barbar.nvim", wants='nvim-web-devicons'}
+    -- use "folke/tokyonight.nvim"
+    -- use "ellisonleao/gruvbox.nvim"
+    -- use {"nvim-lualine/lualine.nvim", requires={ 'nvim-tree/nvim-web-devicons', opt=true }} -- or kyazdani42/nvim-web-devicons
 
-    -- tree & treesitter
-    use {'nvim-treesitter/nvim-treesitter', run=":TSUpdate"}  -- configurations for nvim-treesitter
-    use 'p00f/nvim-ts-rainbow'
-    use 'nvim-treesitter/playground'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    -- treesitter
+    use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}  -- configurations for nvim-treesitter
+    use "p00f/nvim-ts-rainbow"
+    use "nvim-treesitter/playground"
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- telescope
-    use 'nvim-telescope/telescope.nvim'  -- configurations for fuzzy finder (file explorer)
-    use 'nvim-telescope/telescope-media-files.nvim'
+    use "nvim-telescope/telescope.nvim"  -- configurations for fuzzy finder (file explorer)
+    use "nvim-telescope/telescope-media-files.nvim"
     
-    -- gitsigns
-    use 'lewis6991/gitsigns.nvim'
+    -- git
+    use "lewis6991/gitsigns.nvim"
 
-    use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
-    use {'romgrk/barbar.nvim', wants='nvim-web-devicons'}
-    use {'nvim-lualine/lualine.nvim', requires={ 'nvim-tree/nvim-web-devicons', opt=true }} -- or kyazdani42/nvim-web-devicons
-    use {'akinsho/toggleterm.nvim', tag='*', config=function() require('toggleterm').setup() end}
+    use {"akinsho/toggleterm.nvim", tag='*', config=function() require('toggleterm').setup() end}
 	-- use {'iamcco/markdown-preview.nvim', run=function() vim.fn['mkdp#util#install']() end}  -- markdown preview on local website
-	use 'lukas-reineke/indent-blankline.nvim'
-	use 'plasticboy/vim-markdown'
+	use "lukas-reineke/indent-blankline.nvim"
+	use "plasticboy/vim-markdown"
 
 
     if PACKER_BOOTSTRAP then
