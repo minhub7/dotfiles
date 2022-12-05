@@ -26,7 +26,7 @@ map('n', '<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without 
 map('n', '<C-x>', 'dd')  -- one line delete ctrl + x
 map('n', '<Tab>', '>>')
 map('n', '<S-Tab>', '<<')
-
+map('n', '<C-w>', 'viw')  -- word select
 
 -- file io
 nimap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
