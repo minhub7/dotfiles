@@ -59,7 +59,11 @@ map('n', "<C-right>", ":vertical resize +2<CR>")
 -- Plugins
 --------------
 -- Comment
-vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
+if vim.fn.has("linux") or vim.fn.has("win32") then
+    vim.keymap.set('n', '<C-_>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
+else
+    vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
+end
 
 -- toggleterm
 nimap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
