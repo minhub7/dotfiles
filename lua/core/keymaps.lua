@@ -26,11 +26,10 @@ map('n', '<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without 
 map('n', '<C-x>', 'dd')  -- one line delete ctrl + x
 map('n', '<Tab>', '>>')
 map('n', '<S-Tab>', '<<')
-map('n', '<C-w>', 'viw')  -- word select
 
 -- file io
 nimap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-map('n', '<S-q>', '<cmd>qa<CR>')  -- close file using shift + q
+map('n', '<C-q>', '<cmd>qa<CR>')  -- close file using shift + q
 
 -- window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -44,9 +43,6 @@ map('t', '<C-k>', '<Cmd>wincmd k<CR>')
 map('t', '<C-l>', '<Cmd>wincmd l<CR>')
 
 -- Window management
-map('n', 'sh', '<C-w>s') -- split horizontal
-map('n', 'sv', '<C-w>v') -- split vertical
-map('n', 'se', '<C-w>=') -- make split windows equal width & height
 map('n', 'sq', '<Cmd>close<CR>')
 
 -- Resize window with arrows
@@ -87,16 +83,6 @@ nimap('<S-A-left>', '<Cmd>BufferMovePrevious<CR>')    -- re-order to previous
 nimap('<S-A-right>', '<Cmd>BufferMoveNext<CR>')    -- re-order to next
 nimap('<A-p>', '<Cmd>BufferPin<CR>')    -- Pin buffer
 nimap('<A-q>', '<Cmd>BufferClose<CR>')    -- close buffer  
-nimap('<A-1>', '<Cmd>BufferGoto 1<CR>')  -- move to specific bar
-nimap('<A-2>', '<Cmd>BufferGoto 2<CR>')
-nimap('<A-3>', '<Cmd>BufferGoto 3<CR>')
-nimap('<A-4>', '<Cmd>BufferGoto 4<CR>')
-nimap('<A-5>', '<Cmd>BufferGoto 5<CR>')
-nimap('<A-6>', '<Cmd>BufferGoto 6<CR>')
-nimap('<A-7>', '<Cmd>BufferGoto 7<CR>')
-nimap('<A-8>', '<Cmd>BufferGoto 8<CR>')
-nimap('<A-9>', '<Cmd>BufferGoto 9<CR>')
-nimap('<A-0>', '<Cmd>BufferLast<CR>')
 
 -- LSP
 --nmap('K', '<cmd>Lspsaga hover_doc<cr>')
