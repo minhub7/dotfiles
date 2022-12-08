@@ -22,7 +22,6 @@ vim.g.mapleader = ' '
 --------------
 -- General
 --------------
-map('n', '<leader>svr', '<Cmd>source $MYVIMRC<CR>')  -- source init.lua without restarting
 map('n', '<C-x>', 'dd')  -- one line delete ctrl + x
 map('n', '<Tab>', '>>')
 map('n', '<S-Tab>', '<<')
@@ -43,6 +42,9 @@ map('t', '<C-k>', '<Cmd>wincmd k<CR>')
 map('t', '<C-l>', '<Cmd>wincmd l<CR>')
 
 -- Window management
+map('n', 'sh', '<C-w>s')
+map('n', 'sv', '<C-w>v')
+map('n', 'se', '<C-w>=')
 map('n', 'sq', '<Cmd>close<CR>')
 
 -- Resize window with arrows
