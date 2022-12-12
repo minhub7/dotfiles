@@ -8,15 +8,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd.packadd("packer.nvim")
 end
 
--- Autocommand that reloads neovim
--- vim.cmd([[
---    augroup packer_user_config
---        autocmd!
---        autocmd BufWritePost plugins.lua source <afile> | PackerSync
---    augroup end
--- ]])
-
-
 -- Protected call
 local status, packer = pcall(require, "packer")
 if not status then
