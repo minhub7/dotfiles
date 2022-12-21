@@ -290,11 +290,11 @@ local c = {
   vimode = {
     provider = function() return fmt(" %s ", vi.text[vim.fn.mode()]) end,
     hl = vi_mode_hl,
-    right_sep = { str = " ", hl = vi_sep_hl },
+    right_sep = { str = "  ", hl = vi_sep_hl },
   },
   gitbranch = {
     provider = "git_branch",
-    icon = "   ",
+    icon = "  ",
     hl = "UserSLGitBranch",
     right_sep = { str = " ", hl = "UserSLGitBranch" },
     enabled = function()
