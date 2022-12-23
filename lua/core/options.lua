@@ -45,11 +45,11 @@ local options = {
     signcolumn="yes",
 
     -- backspace
-    backspace={'start', 'eol', 'indent'}, 
+    backspace={'start', 'eol', 'indent'},
 
     -- split windows
     splitright=true,
-    splitbelow=true,    
+    splitbelow=true,
 
     -- search settings
     smartcase=true,
@@ -67,4 +67,3 @@ end
     -- clipboard
     vim.opt.clipboard:append("unnamedplus")
 --    vim.opt.iskeyword:append("-")
-    
