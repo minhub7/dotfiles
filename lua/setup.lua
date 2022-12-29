@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
     use "nvim-tree/nvim-web-devicons"
     use "nvim-tree/nvim-tree.lua"  -- configurations for nvim-tree (file explorer/in sidebar)
     use "tpope/vim-surround"  -- add, delete, change surroundings
-    use "neovide/neovide"
 
 	-- Utilities
 	-- Auto completion

@@ -1,2 +1,5 @@
 .DS_store
 packer_compiled.lua
+
+# logfile
+*.log
