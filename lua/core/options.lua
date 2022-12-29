@@ -35,7 +35,7 @@ local options = {
     -- line wrapping
     wrap=true,
     linebreak=true,
-    
+ 
     -- cursor line
     cursorline=true,
 
@@ -64,6 +64,8 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-    -- clipboard
-    vim.opt.clipboard:append("unnamedplus")
+
+-- clipboard
+vim.opt.clipboard:append("unnamedplus")
 --    vim.opt.iskeyword:append("-")
+
