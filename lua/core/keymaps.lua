@@ -40,8 +40,8 @@ mmap('<C-l>', '<Cmd>wincmd l<CR>')
 map('t', '<Esc>', '<C-\\><C-n>')
 
 -- Window management
-map('n', 'sh', '<C-w>s')
-map('n', 'sv', '<C-w>v')
+map('n', '-', '<Cmd>split<CR>')
+map('n', '|', '<Cmd>vertical split<CR>')
 map('n', 'se', '<C-w>=')
 map('n', 'sq', '<Cmd>close<CR>')
 
