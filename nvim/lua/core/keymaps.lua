@@ -30,7 +30,7 @@ map('n', '<S-Tab>', '<<')
 
 -- file io
 mmap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-map('n', '<C-q>', '<cmd>qa<CR>')  -- close file using shift + q
+mmap('<C-q>', '<cmd>qa<CR>')  -- close file using shift + q
 
 -- window navigation
 mmap('<C-h>', '<Cmd>wincmd h<CR>')
@@ -46,20 +46,16 @@ map('n', 'se', '<C-w>=')
 map('n', 'sq', '<Cmd>close<CR>')
 
 -- Resize window with arrows
-mmap('<C-up>', '<Cmd>resize +2<CR>')
-mmap('<C-down>', '<Cmd>resize -2<CR>')
-mmap("<C-left>", "<Cmd>vertical resize -2<CR>")
-mmap("<C-right>", "<Cmd>vertical resize +2<CR>")
+mmap('<Pageup>', '<Cmd>resize +2<CR>')
+mmap('<PageDown>', '<Cmd>resize -2<CR>')
+map('n', "_", "<Cmd>vertical resize -2<CR>")
+map('n', "+", "<Cmd>vertical resize +2<CR>")
 
 --------------
 -- Plugins
 --------------
 -- Comment
-if vim.fn.has("linux") or vim.fn.has("win32") then
-    vim.keymap.set('n', '<C-_>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
-else
-    vim.keymap.set('n', '<C-/>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
-end
+vim.keymap.set('n', '<C-_>', require('Comment.api').toggle.linewise.current)  -- The origin key command is 'gcc'
 
 -- nvim-tree
 mmap('<F1>', "<Cmd>NvimTreeToggle<CR>")
