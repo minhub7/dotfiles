@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
 	-- Utilities
 	-- Auto completion
 	use "hrsh7th/nvim-cmp"
+    use {'tzachar/cmp-tabnine', run='./install.sh'}
 	use "hrsh7th/cmp-buffer"
 	use "hrsh7th/cmp-path"
 	use "hrsh7th/cmp-cmdline"
