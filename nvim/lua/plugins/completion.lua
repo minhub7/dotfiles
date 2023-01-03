@@ -108,7 +108,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        cmp_tabnine = "[TN]",
+        cmp_tabnine = "[Tab9]",
       })[entry.source.name]
       return vim_item
     end,

@@ -52,15 +52,13 @@ local function lsp_highlight_document(client)
   end
 end
 
--- Mappings for diagnostic
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
--- vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-vim.keymap.set('n', '<leader>[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', '<leader>]d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
-
 local function lsp_keymaps(bufnr)
+  local opts = { noremap = true, silent = true }
+  -- Mappings for diagnostic
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", ">d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+
   -- Mappings for lsp
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
