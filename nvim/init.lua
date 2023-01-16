@@ -12,6 +12,7 @@ require("plugins.gitsigns")
 require("plugins.indentline")
 require("plugins.nvim-tree")
 require("plugins.telescope")
+require("plugins.toggleterm")
 require("plugins.treesitter")
 require("plugins.neovide")
 
