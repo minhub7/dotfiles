@@ -61,9 +61,9 @@ vim.keymap.set('n', '<C-_>', require('Comment.api').toggle.linewise.current)  --
 mmap('<F1>', "<Cmd>NvimTreeToggle<CR>")
 
 -- toggleterm
-mmap('<F2>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t1<CR>')
-mmap('<F3>', '<Cmd>ToggleTerm size=80 direction=vertical ToggleTermSetName t2<CR>')
-mmap('<F4>', '<Cmd>ToggleTerm size=10 direction=float ToggleTermSetName t3<CR>')
+mmap('<F2>', '<Cmd>ToggleTerm direction=float ToggleTermSetName t1<CR>')
+mmap('<F3>', '<Cmd>ToggleTerm size=10 direction=horizontal ToggleTermSetName t2<CR>')
+mmap('<F4>', '<Cmd>ToggleTerm size=82 direction=vertical ToggleTermSetName t3<CR>')
 mmap('<F9>', '<Cmd>TermExec cmd="python %:p"<CR>')
 
 -- telescope
