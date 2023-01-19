@@ -1,20 +1,27 @@
 -- Set colorscheme
-local setup, kanagawa = pcall(require, "kanagawa")
-if not setup then
+local setup_nightfox, nightfox = pcall(require, "nightfox")
+if not setup_nightfox then
   return
 end
 
--- local specs = { all = { syntax = { builtin0 = "pink.bright" }}}
--- require("nightfox").setup({
---     options = {
---         styles = {
---             comments = "italic",
---             keywords = "bold",
---             types = "italic, bold",
---         }
---     },
---     specs = specs,
--- })
+local setup_kanagawa, kanagawa = pcall(require, "kanagawa")
+if not setup_kanagawa then
+  return
+end
+
+
+local specs = { all = { syntax = { builtin0 = "pink.bright" }}}
+nightfox.setup({
+    options = {
+        dim_inactive=true,
+        styles = {
+            comments = "italic",
+            keywords = "bold",
+            types = "italic, bold",
+        }
+    },
+    specs = specs,
+})
 
 kanagawa.setup {
     undercurl=true,
@@ -22,12 +29,15 @@ kanagawa.setup {
     functionStyle={},
     keywordStyle={ italic = true },
     statementStyle={ bold = true },
+    typeStyle={ italic=true, bold=true },
     variablebuiltinStyle={ italic = true },
     specialReturn=false,
     specialException=true,
     dimInactive=true,
+    globalStatus=true,
     terminalColors=true,
 }
+
 
 vim.cmd("colorscheme kanagawa")
 require("plugins.feline")
@@ -42,3 +52,5 @@ require("plugins.feline")
 --         lualine_z = { 'progress' },
 --     },
 -- }
+
+
