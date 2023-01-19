@@ -2,13 +2,13 @@ local configs = require("nvim-treesitter.configs")
 
 configs.setup {
   ensure_installed = "all",
-  sync_install = false, 
+  sync_install = false,
   auto_install = true,
   ignore_install = { "" }, -- List of parsers to ignore installing
   autopairs = { enable = true },
     highlight = {
       enable = true, -- false will disable the whole extension
-      disable = { "" }, -- list of language that will be disabled
+      -- disable = { "" }, -- list of language that will be disabled
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
       disable = function(lang, buf)
         local max_filesize = 100 * 1024 -- 100 KB
