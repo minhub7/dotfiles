@@ -78,6 +78,7 @@ return require('packer').startup(function(use)
     use "p00f/nvim-ts-rainbow"
     use "nvim-treesitter/playground"
     use "JoosepAlviste/nvim-ts-context-commentstring"
+    use "RRethy/vim-illuminate"
 
     -- telescope
     use "nvim-telescope/telescope.nvim"  -- configurations for fuzzy finder (file explorer)
