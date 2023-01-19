@@ -13,7 +13,7 @@ local status, packer = pcall(require, "packer")
 if not status then
     return
 end
- 
+
 -- Have packer use a popup window
 packer.init {
     display = {
@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
 
 	-- Utilities
     -- Colorscheme
+    use "rebelot/kanagawa.nvim"
     use "EdenEast/nightfox.nvim"
     -- use "folke/tokyonight.nvim"
     -- use "ellisonleao/gruvbox.nvim"
@@ -68,10 +69,10 @@ return require('packer').startup(function(use)
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 	use "lukas-reineke/indent-blankline.nvim"
-    
+
     -- terminal
     use {"akinsho/toggleterm.nvim", tag='*', config=function() require('toggleterm').setup() end}
-	
+
     -- treesitter
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}  -- configurations for nvim-treesitter
     use "p00f/nvim-ts-rainbow"
@@ -81,7 +82,7 @@ return require('packer').startup(function(use)
     -- telescope
     use "nvim-telescope/telescope.nvim"  -- configurations for fuzzy finder (file explorer)
     use "nvim-telescope/telescope-media-files.nvim"
-    
+
     -- git & markdown
     use "lewis6991/gitsigns.nvim"
 	use {'iamcco/markdown-preview.nvim', run=function() vim.fn['mkdp#util#install']() end}
