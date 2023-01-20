@@ -39,7 +39,7 @@ kanagawa.setup {
 }
 
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme carbonfox")
 require("plugins.feline")
 
 -- require("gruvbox").setup()
