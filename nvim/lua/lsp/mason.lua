@@ -1,5 +1,5 @@
 local servers = {
-	"sumneko_lua",
+	"lua_ls",
 	"pyright",
 	"jsonls",
 }
@@ -24,9 +24,7 @@ require("mason-lspconfig").setup({
 })
 
 local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status then
-	return
-end
+if (not lspconfig_status) then return end
 
 local opts = {}
 

@@ -4,18 +4,16 @@ if not status then
     return
 end
 
-local config_status, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status then
-    return
-end
+-- local config_status, nvim_tree_config = pcall(require, "nvim-tree.config")
+-- if not config_status then
+--     return
+-- end
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-require("nvim-tree").setup({
+nvim_tree.setup {
     disable_netrw = true,
-    open_on_setup = true,
-    open_on_setup_file = true,
     diagnostics = {
         enable = true,
         icons = {
@@ -34,4 +32,5 @@ require("nvim-tree").setup({
         group_empty = true,
     },
     filters = { dotfiles = true },
-})
+}
+
