@@ -30,7 +30,7 @@ map('n', '<S-Tab>', '<<')
 
 -- file io
 mmap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-mmap('<C-q>', '<cmd>qa<CR>')  -- close file using shift + q
+mmap('<C-q>', '<cmd>qa<CR>')  -- close file using ctrl + q
 
 -- window navigation
 mmap('<C-h>', '<Cmd>wincmd h<CR>')
@@ -73,18 +73,25 @@ map('n', '<leader>fb', "<Cmd>Telescope buffers<CR>")
 map('n', '<leader>fh', "<Cmd>Telescope help_tags<CR>")
 
 -- barbar
-mmap('<A-h>', '<Cmd>BufferPrevious<CR>')    -- move to previous
-mmap('<A-l>', '<Cmd>BufferNext<CR>')    -- move to next
-mmap('<S-A-h>', '<Cmd>BufferMovePrevious<CR>')    -- re-order to previous
-mmap('<S-A-l>', '<Cmd>BufferMoveNext<CR>')    -- re-order to next
-mmap('<A-p>', '<Cmd>BufferPin<CR>')    -- Pin buffer
-mmap('<A-q>', '<Cmd>BufferClose<CR>')    -- close buffer  
+mmap('<A-1>', '<Cmd>BufferGoto 1<CR>')    -- move to 1
+mmap('<A-2>', '<Cmd>BufferGoto 2<CR>')    -- move to 2
+mmap('<A-3>', '<Cmd>BufferGoto 3<CR>')    -- move to 3
+mmap('<A-h>', '<Cmd>BufferPrevious<CR>')  -- move to previous
+mmap('<A-l>', '<Cmd>BufferNext<CR>')      -- move to next
+mmap('<A-p>', '<Cmd>BufferPin<CR>')       -- Pin buffer
+mmap('<A-q>', '<Cmd>BufferClose<CR>')     -- close buffer  
+mmap('<S-A-h>', '<Cmd>BufferMovePrevious<CR>')  -- re-order to previous
+mmap('<S-A-l>', '<Cmd>BufferMoveNext<CR>')  -- re-order to next
 
 -- LSP
---nmap('K', '<cmd>Lspsaga hover_doc<cr>')
---imap('<C-k>', '<cmd>Lspsaga hover_doc<cr>')
---nmap('gh', '<cmd>Lspsaga lsp_finder<cr>')
---nmap('<C-e>', '<cmd>Lspsaga show_line_diagnostics<CR>')
+map('n', '<leader>d', "<Cmd>lua vim.diagnostic.open_float()<CR>")
+map('n', '[d', "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
+map('n', ']d', "<Cmd>Lspsaga diagnostic_jump_next<CR>")
+map('n', 'K', "<Cmd>Lspsaga hover_doc<CR>")
+map('n', 'F', "<Cmd>Lspsaga lsp_finder<CR>")
+map('n', 'gd', "<Cmd>Lspsaga peek_definition<CR>")
+map('n', 'gD', "<Cmd>Lspsaga goto_definition<CR>")
+map('n', 'gr', "<Cmd>Lspsaga rename ++project<CR>")
 
 -- git
 --nmap('<C-g>', '<cmd>GitMessenger<cr>')
