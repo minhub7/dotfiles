@@ -1,35 +1,29 @@
-local servers = {
-	"lua_ls",
-	"pyright",
-	"jsonls",
-}
+local lspconfig_status, lspconfig = pcall(require, "lspconfig")
+if (not lspconfig_status) then return end
 
-local settings = {
+local servers = { "lua_ls", "pyright", "jsonls", }
+
+require("mason").setup({
+	log_level = vim.log.levels.INFO,
+	max_concurrent_installers = 4,
 	ui = {
 		border = "none",
 		icons = {
-			package_installed = "◍",
-			package_pending = "◍",
-			package_uninstalled = "◍",
+			package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
 		},
 	},
-	log_level = vim.log.levels.INFO,
-	max_concurrent_installers = 4,
-}
+})
 
-require("mason").setup(settings)
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
 
-local lspconfig_status, lspconfig = pcall(require, "lspconfig")
-if (not lspconfig_status) then return end
-
-local opts = {}
 
 for _, server in pairs(servers) do
-	opts = {
+	local opts = {
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
 	}
