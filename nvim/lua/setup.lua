@@ -37,8 +37,8 @@ return require('packer').startup(function(use)
 
 	-- Utilities
     -- Colorscheme
-    use "rebelot/kanagawa.nvim"
     use "EdenEast/nightfox.nvim"
+    use "rebelot/kanagawa.nvim"
     -- use "folke/tokyonight.nvim"
     -- use "ellisonleao/gruvbox.nvim"
 
