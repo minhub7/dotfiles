@@ -84,14 +84,14 @@ mmap('<S-A-h>', '<Cmd>BufferMovePrevious<CR>')  -- re-order to previous
 mmap('<S-A-l>', '<Cmd>BufferMoveNext<CR>')  -- re-order to next
 
 -- LSP
-map('n', '<leader>d', "<Cmd>lua vim.diagnostic.open_float()<CR>")
-map('n', '[d', "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
-map('n', ']d', "<Cmd>Lspsaga diagnostic_jump_next<CR>")
-map('n', 'K', "<Cmd>Lspsaga hover_doc<CR>")
-map('n', 'F', "<Cmd>Lspsaga lsp_finder<CR>")
-map('n', 'gd', "<Cmd>Lspsaga peek_definition<CR>")
-map('n', 'gD', "<Cmd>Lspsaga goto_definition<CR>")
-map('n', 'gr', "<Cmd>Lspsaga rename ++project<CR>")
+-- map('n', '<leader>d', "<Cmd>lua vim.diagnostic.open_float()<CR>")
+-- map('n', '[d', "<Cmd>Lspsaga diagnostic_jump_prev<CR>")
+-- map('n', ']d', "<Cmd>Lspsaga diagnostic_jump_next<CR>")
+-- map('n', 'K', "<Cmd>Lspsaga hover_doc<CR>")
+-- map('n', 'F', "<Cmd>Lspsaga lsp_finder<CR>")
+-- map('n', 'gd', "<Cmd>Lspsaga peek_definition<CR>")
+-- map('n', 'gD', "<Cmd>Lspsaga goto_definition<CR>")
+-- map('n', 'gr', "<Cmd>Lspsaga rename ++project<CR>")
 
 -- git
 --nmap('<C-g>', '<cmd>GitMessenger<cr>')
