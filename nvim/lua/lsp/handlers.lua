@@ -16,7 +16,8 @@ M.setup = function()
     end
 
     local config = {
-        -- disable virtual text virtual_text = false,
+        -- disable virtual text 
+        virtual_text = false,
         -- show signs
         signs = { active = signs, },
         update_in_insert = true,
@@ -33,8 +34,7 @@ M.setup = function()
     }
     vim.diagnostic.config(config)
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded", })
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help,
-        { border = "rounded", })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", })
 end
 
 local function lsp_highlight_document(client)
@@ -62,17 +62,15 @@ local function lsp_keymaps(bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    -- Mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format { async = true } end, bufopts)
+    -- Mappings. (See `:help vim.lsp.*` for documentation on any of the below functions)
+    buf_keymap(bufnr, 'n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    buf_keymap(bufnr, 'n', 'gD', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    buf_keymap(bufnr, 'n', 'K', "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    buf_keymap(bufnr, 'n', 'gi', "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+    buf_keymap(bufnr, 'n', 'gr', "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    buf_keymap(bufnr, 'n', 'gs', "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    buf_keymap(bufnr, 'n', '<leader>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+    -- vim.keymap.set(bufnr, 'n', '<leader>fm', function() vim.lsp.buf.format { async = true } end, opts)
     -- vim.keymap.set('n', 'gR', vim.lsp.buf.rename, bufopts)
     -- vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 end

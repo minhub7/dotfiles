@@ -8,12 +8,12 @@
 --   command = "c",
 --   terminal = "t",
 
-function map(mode, shortcut, command)
+local function map(mode, shortcut, command)
     vim.api.nvim_set_keymap(mode, shortcut, command, { noremap=true, silent=true })
 end
 
 -- This is for multiple mappings
-function mmap(shortcut, command)
+local function mmap(shortcut, command)
     map('n', shortcut, command)
     map('i', shortcut, command)
     map('t', shortcut, command)
