@@ -65,7 +65,6 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
--- clipboard
-vim.opt.clipboard:append("unnamedplus")
+vim.opt.clipboard:append("unnamedplus")  -- clipboard
+vim.g.copilot_no_tab_map = true  -- copilot
 --    vim.opt.iskeyword:append("-")
-
