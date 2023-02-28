@@ -30,7 +30,6 @@ map('n', '<S-Tab>', '<<')
 
 -- file io
 mmap('<C-s>', '<cmd>w<CR>')  -- save file using ctrl + s
-mmap('<C-q>', '<cmd>qa<CR>')  -- close file using ctrl + q
 
 -- window navigation
 mmap('<C-h>', '<Cmd>wincmd h<CR>')
