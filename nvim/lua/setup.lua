@@ -49,14 +49,16 @@ return require('packer').startup(function(use)
 
     -- Auto completion
 	use "hrsh7th/nvim-cmp"
-    use {'tzachar/cmp-tabnine', run='./install.sh'}
 	use "hrsh7th/cmp-buffer"
 	use "hrsh7th/cmp-path"
 	use "hrsh7th/cmp-cmdline"
-    use "saadparwaiz1/cmp_luasnip"
 	use "hrsh7th/cmp-nvim-lsp"
 	use "hrsh7th/cmp-nvim-lua"
+    use "saadparwaiz1/cmp_luasnip"
+    use {'tzachar/cmp-tabnine', run='./install.sh'}
 	use "windwp/nvim-autopairs"
+    -- use {"zbirenbaum/copilot.lua", cmd="Copilot", event="InsertEnter", config=function() require("copilot").setup({}) end}
+    -- use {"zbirenbaum/copilot-cmp", after={ "copilot.lua" }, config=function() require("copilot_cmp").setup({}) end}
 
     -- LSP
 	use "neovim/nvim-lspconfig"
