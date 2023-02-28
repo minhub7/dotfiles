@@ -111,10 +111,10 @@ prompt_context() {
 # For a full list of active aliases, run `alias`.
 alias python=python3
 alias pip=pip3
-# alias ls="lsd --no-symlink"
-# alias ll="lsd -l --no-symlink"
-# alias lt="lsd --tree --no-symlink"
-# alias la="lsd -al --no-symlink"
+alias ls="lsd --no-symlink"
+alias ll="lsd -l --no-symlink"
+alias lt="lsd --tree --no-symlink"
+alias la="lsd -al --no-symlink"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
