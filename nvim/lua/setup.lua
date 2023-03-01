@@ -27,25 +27,23 @@ packer.init {
 return require('packer').startup(function(use)
 	use "wbthomason/packer.nvim"  -- Package manager
 
-	-- common
+	-- commons & utilities
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "numToStr/Comment.nvim"
     use "nvim-tree/nvim-web-devicons"
     use "nvim-tree/nvim-tree.lua"  -- configurations for nvim-tree (file explorer/in sidebar)
     use "tpope/vim-surround"  -- add, delete, change surroundings
+    use {"akinsho/toggleterm.nvim", tag='*', config=function() require('toggleterm').setup() end}  -- terminal
 
 	-- Utilities
     -- Colorscheme
     use "EdenEast/nightfox.nvim"
-    use "rebelot/kanagawa.nvim"
-    -- use "folke/tokyonight.nvim"
-    -- use "ellisonleao/gruvbox.nvim"
+    -- use "rebelot/kanagawa.nvim"
 
     -- Status
     use {"nvim-lualine/lualine.nvim", requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
     use {"romgrk/barbar.nvim", wants='nvim-web-devicons'}
-    -- use "feline-nvim/feline.nvim"
 
     -- Auto completion
 	use "hrsh7th/nvim-cmp"
@@ -72,18 +70,15 @@ return require('packer').startup(function(use)
     use "rafamadriz/friendly-snippets"
 	use "lukas-reineke/indent-blankline.nvim"
 
-    -- terminal
-    use {"akinsho/toggleterm.nvim", tag='*', config=function() require('toggleterm').setup() end}
-
-    -- treesitter
+    -- syntax highlighting
     use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}  -- configurations for nvim-treesitter
     use "p00f/nvim-ts-rainbow"
     use "nvim-treesitter/playground"
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use "RRethy/vim-illuminate"
 
-    -- telescope
-    use "nvim-telescope/telescope.nvim"  -- configurations for fuzzy finder (file explorer)
+    -- fuzzy finder
+    use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
 
     -- git & markdown
