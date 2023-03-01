@@ -20,7 +20,6 @@ nightfox.setup({
 })
 
 vim.cmd("colorscheme carbonfox")
-require("plugins.feline")
 
 -- kanagawa.setup {
 --     undercurl=true,
@@ -36,16 +35,3 @@ require("plugins.feline")
 --     globalStatus=true,
 --     terminalColors=true,
 -- }
-
--- require("gruvbox").setup()
--- require('lualine').setup {
---     options = {
---         theme='gruvbox',
---     },
---     sections = {
---         lualine_y = { 'location' },
---         lualine_z = { 'progress' },
---     },
--- }
-
-

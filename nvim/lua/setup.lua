@@ -43,9 +43,9 @@ return require('packer').startup(function(use)
     -- use "ellisonleao/gruvbox.nvim"
 
     -- Status
-    use "feline-nvim/feline.nvim"
+    use {"nvim-lualine/lualine.nvim", requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
     use {"romgrk/barbar.nvim", wants='nvim-web-devicons'}
-    -- use {"nvim-lualine/lualine.nvim", requires={ 'nvim-tree/nvim-web-devicons', opt=true }} -- or kyazdani42/nvim-web-devicons
+    -- use "feline-nvim/feline.nvim"
 
     -- Auto completion
 	use "hrsh7th/nvim-cmp"
