@@ -8,7 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load
 # if set to "random", it will load a random theme each time oh-my-zsh is loaded
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )  # Set list of themes to pick from when loading at random
 
@@ -82,10 +81,6 @@ fi
 zplug load
 ZSH_AUTO_SUGGEST_HIGHLIGHT_STYLE='fg=23'
 
-# Key bindings for plugins
-# bindkey -M vicmd 'k' history-substring-search-up
-# bindkey -M vicmd 'j' history-substring-search-down
-
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -100,13 +95,6 @@ ZSH_AUTO_SUGGEST_HIGHLIGHT_STYLE='fg=23'
 
 # export ARCHFLAGS="-arch x86_64"  # Compilation flags
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-
 source $ZSH/oh-my-zsh.sh
 
 # prompt setting
@@ -115,6 +103,10 @@ prompt_context() {
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs, plugins, and themes.
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
 
 # alias for python
 alias python=python3
