@@ -1,8 +1,8 @@
-### Dotfiles that any developer wants
+# Dotfiles that any developer wants
 
 ## Contents
 **zshell**  
-**Neovim**  
+**neovim**  
 **tmux**
 
 ## Requirements
