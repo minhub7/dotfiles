@@ -5,7 +5,7 @@ if not setup then
 end
 
 
-require("toggleterm").setup{
+toggleterm.setup {
   float_opts = {
     border = 'double',
     width = 200,
