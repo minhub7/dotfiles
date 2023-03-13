@@ -8,11 +8,6 @@ if (not snip_setup) then return end
 require("luasnip/loaders/from_vscode").lazy_load()
 
 
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
-
 --   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
@@ -58,8 +53,8 @@ cmp.setup {
     end,
   },
   mapping = {
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-	["<C-j>"] = cmp.mapping.select_next_item(),
+ --    ["<C-k>"] = cmp.mapping.select_prev_item(),
+	-- ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping {
@@ -80,8 +75,6 @@ cmp.setup {
         luasnip.expand()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
       else
         fallback()
       end
@@ -114,7 +107,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
-        cmp_tabnine = "[Tab9]",
+        -- cmp_tabnine = "[Tab9]",
         -- Copilot = "[ ]",
       })[entry.source.name]
       return vim_item
@@ -126,7 +119,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    { name = "cmp_tabnine"},
+    -- { name = "cmp_tabnine"},
     -- { name = "copilot"},
   },
   confirm_opts = {
