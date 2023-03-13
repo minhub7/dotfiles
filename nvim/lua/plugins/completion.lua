@@ -53,7 +53,7 @@ cmp.setup {
     end,
   },
   mapping = {
- --    ["<C-k>"] = cmp.mapping.select_prev_item(),
+    -- ["<C-k>"] = cmp.mapping.select_prev_item(),
 	-- ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- if you want to remove the default `<C-y>` mapping.
