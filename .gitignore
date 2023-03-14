@@ -3,3 +3,4 @@ packer_compiled.lua
 
 # logfile
 *.log
+nvim/pack/
