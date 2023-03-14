@@ -13,6 +13,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 nvim_tree.setup {
+    auto_reload_on_write = true,
     disable_netrw = true,
     diagnostics = {
         enable = true,
@@ -24,13 +25,19 @@ nvim_tree.setup {
         }
     },
     view = {
-        adaptive_size = true,
-        mappings = { list = {{ key="u", action="dir_up" }}},
+        width = { min = 30, max = 50 },
+        preserve_window_proportions = true,
     },
     renderer = {
         highlight_git = true,
-        group_empty = true,
+        full_name = true,
     },
-    filters = { dotfiles = true },
+    git = {
+        enable = true,
+        ignore = false,
+    },
+    modified = {
+        enable = true,
+    }
 }
 
