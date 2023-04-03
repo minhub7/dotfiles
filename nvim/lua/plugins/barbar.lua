@@ -15,15 +15,41 @@ nvim_tree_events.subscribe('TreeClose', function() bufferline_api.set_offset(0) 
 bufferline.setup {
     animation = true,
     auto_hide = false,
-    tabpages = false,
-    closable = true,
+    tabpages = true,
     clickable = true,
-    -- Configure icons on the bufferline.
-    icon_separator_active = '▎',
-    icon_separator_inactive = '▎',
-    icon_close_tab = '',
-    icon_close_tab_modified = '●',
-    icon_pinned = '車',
+
+    icons = {
+        -- Configure the base icons on the bufferline.
+        buffer_index = false,
+        buffer_number = false,
+        button = '',
+
+        -- Enables / disables diagnostic symbols
+        diagnostics = {
+          [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
+          [vim.diagnostic.severity.WARN] = {enabled = false},
+          [vim.diagnostic.severity.INFO] = {enabled = false},
+          [vim.diagnostic.severity.HINT] = {enabled = false},
+        },
+        filetype = {
+          custom_colors = false,
+          enabled = true, -- Requires `nvim-web-devicons` if `true`
+        },
+        separator = {left = '▎', right = ''},
+
+        -- Configure the icons on the bufferline when modified or pinned.
+        -- Supports all the base icon options.
+        modified = {button = '●'},
+        pinned = {button = '車'},
+
+        -- Configure the icons on the bufferline based on the visibility of a buffer.
+        -- Supports all the base icon options, plus `modified` and `pinned`.
+        alternate = {filetype = {enabled = false}},
+        current = {buffer_index = true},
+        inactive = {button = '×'},
+        visible = {modified = {buffer_number = false}},
+    },
+
     insert_at_end = true,
 }
 
