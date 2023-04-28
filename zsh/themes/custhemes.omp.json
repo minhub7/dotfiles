@@ -46,14 +46,8 @@
             "folder_separator_icon": "/",
             "style": "full"
           },
-          "template": " \uf07b  <b>{{ .Path }}</b> <p:light-sky-blue>\u26a1</>  "
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
+          "template": " \uf07b  <b>{{ .Path }}</b> <p:light-sky-blue>\u26a1</> "
+        },
         {
           "type": "git",
           "style": "plain",
@@ -71,13 +65,7 @@
             "fetch_upstream_icon": true,
             "branch_icon": "\ue725 "
           }
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
+        },
         {
           "type": "node",
           "style": "plain",
@@ -107,7 +95,13 @@
           "style": "plain",
           "foreground": "p:light-sky-blue",
           "template": "(\uFCD1 {{ .Full }}) "
-        },
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
         {
           "type": "time",
           "style": "plain",
@@ -115,7 +109,7 @@
           "properties": {
             "time_format": "15:04:05"
           },
-          "template": " {{ .CurrentDate | date .Format }} "
+          "template": " ({{ .CurrentDate | date .Format }}) "
         }
       ]
     },
