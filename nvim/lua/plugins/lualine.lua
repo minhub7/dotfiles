@@ -43,7 +43,7 @@ lualine.setup {
     lualine_a = {{ 'mode', separator={ left='' }, right_padding=2 }},
     lualine_b = {
             { 'filename', path=1, symbols={ modified='●'}},
-            { 'diagnostics', symbols={ error = ' ', warn = ' ', info = ' ', hint = ' ' }}
+            { 'diagnostics', symbols={ error=' ', warn=' ', info=' ', hint=' ' }}
         },
     lualine_c = { 'branch', 'diff' },
     lualine_x = {},
