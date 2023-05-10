@@ -40,12 +40,15 @@ lualine.setup {
     refresh = { statusline = 200, }
   },
   sections = {
-    lualine_a = {{ 'mode', separator = { left = '' }, right_padding = 2 }},
-    lualine_b = {{ 'filename', path = 1, symbols = { modified='●'}}, 'diagnostics' },
+    lualine_a = {{ 'mode', separator={ left='' }, right_padding=2 }},
+    lualine_b = {
+            { 'filename', path=1, symbols={ modified='●'}},
+            { 'diagnostics', symbols={ error = ' ', warn = ' ', info = ' ', hint = ' ' }}
+        },
     lualine_c = { 'branch', 'diff' },
     lualine_x = {},
     lualine_y = { 'filetype', 'fileformat', 'encoding' },
-    lualine_z = { 'location', { 'progress', separator = { right = '' }, left_padding = 2 }},
+    lualine_z = { 'location', { 'progress', separator={ right = '' }, left_padding = 2 }},
   },
   inactive_sections = {
     lualine_a = { 'filename' },
