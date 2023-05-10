@@ -25,7 +25,7 @@ nvim_tree.setup {
         }
     },
     view = {
-        width = { min = 30, max = 50 },
+        width = { min = 30, max = 30 },
         preserve_window_proportions = true,
     },
     renderer = {
