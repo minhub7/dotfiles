@@ -8,7 +8,7 @@
 ## Requirements
 - oh-my-zsh
   - zplug (for management oh-my-zsh plugins)
-  - oh-my-posh
+  - oh-my-posh == 15.4.0
 - Neovim >= 0.8.1
 - tmux
 
