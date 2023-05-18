@@ -5,19 +5,14 @@ local options = {
     fileencoding='utf-8',
     title=true,
     backup=false,
+    writebackup=false,
     mouse="a",
     laststatus=2,
     visualbell=true,
     wildmenu=true,
-    conceallevel=0,
     completeopt={"menuone", "noselect"},
-    timeoutlen=1000,
-    updatetime=300,  -- faster completion
-    writebackup=false,
-
-    -- cmd
-    showcmd=true,
-    cmdheight=2,
+    timeoutlen=400,
+    updatetime=250,  -- faster completion
 
     -- line numbers
     number=true,
@@ -55,10 +50,6 @@ local options = {
     smartcase=true,
     ignorecase=true,
     hlsearch=true,
-
-    -- scroll off
-    scrolloff=8,
-    sidescrolloff=8,
 }
 
 for k, v in pairs(options) do
