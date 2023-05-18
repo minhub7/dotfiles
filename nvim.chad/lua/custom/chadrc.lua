@@ -11,6 +11,9 @@ M.ui = {
   hl_override = highlights.override,
   hl_add = highlights.add,
 
+  cmp = {},
+  telescope = { style = "bordered" },
+
   tabufline = {
     show_numbers = true,
   },
