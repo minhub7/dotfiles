@@ -72,15 +72,15 @@ map('n', '<leader>fb', "<Cmd>Telescope buffers<CR>")
 map('n', '<leader>fh', "<Cmd>Telescope help_tags<CR>")
 
 -- barbar
-mmap('¡', '<Cmd>BufferGoto 1<CR>')    -- move to 1
-mmap('™', '<Cmd>BufferGoto 2<CR>')    -- move to 2
-mmap('£', '<Cmd>BufferGoto 3<CR>')    -- move to 3
-mmap('˙', '<Cmd>BufferPrevious<CR>')  -- move to previous
-mmap('¬', '<Cmd>BufferNext<CR>')      -- move to next
-mmap('π', '<Cmd>BufferPin<CR>')       -- Pin buffer
-mmap('œ', '<Cmd>BufferClose<CR>')     -- close buffer  
-mmap('Ó', '<Cmd>BufferMovePrevious<CR>')  -- re-order to previous
-mmap('Ò', '<Cmd>BufferMoveNext<CR>')  -- re-order to next
+mmap('<A-1>', '<Cmd>BufferGoto 1<CR>')    -- move to 1
+mmap('<A-2>', '<Cmd>BufferGoto 2<CR>')    -- move to 2
+mmap('<A-3>', '<Cmd>BufferGoto 3<CR>')    -- move to 3
+mmap('<A-h>', '<Cmd>BufferPrevious<CR>')  -- move to previous
+mmap('<A-l>', '<Cmd>BufferNext<CR>')      -- move to next
+mmap('<A-p>', '<Cmd>BufferPin<CR>')       -- Pin buffer
+mmap('<A-q>', '<Cmd>BufferClose<CR>')     -- close buffer  
+mmap('<S-A-h>', '<Cmd>BufferMovePrevious<CR>')  -- re-order to previous
+mmap('<S-A-l>', '<Cmd>BufferMoveNext<CR>')  -- re-order to next
 
 -- LSP
 -- map('n', '<leader>d', "<Cmd>lua vim.diagnostic.open_float()<CR>")

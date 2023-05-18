@@ -10,9 +10,7 @@ end
 
 -- Protected call
 local status, packer = pcall(require, "packer")
-if not status then
-    return
-end
+if (not status) then return end
 
 -- Have packer use a popup window
 packer.init {
