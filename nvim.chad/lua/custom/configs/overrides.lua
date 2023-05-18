@@ -13,9 +13,6 @@ M.treesitter = {
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
   },
 }
 
@@ -41,17 +38,31 @@ M.mason = {
 
 -- git support in nvimtree
 M.nvimtree = {
+  auto_reload_on_write = true,
   git = {
     enable = true,
+    ignore = false,
   },
-
+  diagnostics = {
+    enable = true,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
+  },
   renderer = {
     highlight_git = true,
+    full_name = true,
     icons = {
       show = {
         git = true,
       },
     },
+  },
+  modified = {
+    enable = true,
   },
 }
 
