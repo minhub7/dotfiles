@@ -13,9 +13,9 @@ M.disabled = {
     ["<leader>rn"] = "",
 
     -- tabufline
-    -- ["<Tab>"] = "",
-    -- ["<S-Tab>"] = "",
-    -- ["<leader>x"] = "",
+    ["<Tab>"] = "",
+    ["<S-Tab>"] = "",
+    ["<leader>x"] = "",
 
     -- nvim-tree
     ["<C-n>"] = "",
@@ -46,13 +46,13 @@ M.disabled = {
 
   v = {
     ["<leader>/"] = "",
-  }
+  },
 }
 
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-    ["<C-x>"] = { "dd", "Cut current line"},
+    ["<C-x>"] = { "dd", "Cut current line" },
 
     -- window management
     ["-"] = { "<cmd> split <CR>", "Window horizontal split" },
@@ -73,7 +73,7 @@ M.general = {
     ["<C-k>"] = { "<cmd> wincmd k <CR>", "Window up" },
 
     ["<Esc>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
-  }
+  },
 }
 
 -- more keybinds!
@@ -203,6 +203,16 @@ M.nvterm = {
       end,
       "New vertical term",
     },
+  },
+}
+
+M.GotoPreview = {
+  n = {
+    ["gpd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "goto definition" },
+    ["gpt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "goto type definition" },
+    ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "goto implementation" },
+    ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "goto references" },
+    ["gq"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "all preview windows close" },
   },
 }
 
