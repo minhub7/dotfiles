@@ -5,10 +5,10 @@ if not setup then
 end
 
 
-toggleterm.setup{
+toggleterm.setup {
   float_opts = {
     border = 'double',
-    width = 200,
-    height = 50,
+    width = 240,
+    height = 60,
   },
 }

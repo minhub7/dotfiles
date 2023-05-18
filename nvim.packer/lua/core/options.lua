@@ -27,10 +27,6 @@ local options = {
     smartindent=true,
     showtabline=2,
 
-    -- line wrapping
-    wrap=true,
-    linebreak=true,
- 
     -- cursor line
     cursorline=true,
 
