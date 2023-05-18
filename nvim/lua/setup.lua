@@ -10,7 +10,9 @@ end
 
 -- Protected call
 local status, packer = pcall(require, "packer")
-if (not status) then return end
+if not status then
+    return
+end
 
 -- Have packer use a popup window
 packer.init {
@@ -36,9 +38,7 @@ return require('packer').startup(function(use)
 	-- Utilities
     -- Colorscheme
     use "EdenEast/nightfox.nvim"
-    -- use "rebelot/kanagawa.nvim"
     -- use "folke/tokyonight.nvim"
-    -- use "ellisonleao/gruvbox.nvim"
 
     -- Status
     use {"nvim-lualine/lualine.nvim", requires={ 'kyazdani42/nvim-web-devicons', opt=true }}
