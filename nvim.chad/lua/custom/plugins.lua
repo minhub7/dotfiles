@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -25,7 +25,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -39,11 +39,36 @@ local plugins = {
   },
 
   -- Install a plugin
+  -- better-escape
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
     config = function()
       require("better_escape").setup()
+    end,
+  },
+
+  -- code Analysis
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("symbols-outline").setup {
+        width = 15,
+      }
+    end,
+    keys = {
+      { "<leader><Tab>", "<cmd>SymbolsOutline<CR>" },
+    },
+  },
+
+  -- go to preview
+  {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup {
+        width = 120,
+        height = 40,
+      }
     end,
   },
 
