@@ -66,4 +66,10 @@ M.nvimtree = {
   },
 }
 
+M.cmp = {
+  completion = {
+    completeopt = "menu,menuone,noselect",
+  },
+}
+
 return M
