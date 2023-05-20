@@ -50,6 +50,10 @@ M.disabled = {
 }
 
 M.general = {
+
+  i = {
+    ["<C-l>"] = { 'copilot#Accept("<CR>")', "Accept copilot suggestion", opts = { silent = true, expr = true } },
+  },
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-x>"] = { "dd", "Cut current line" },
@@ -106,6 +110,28 @@ M.tabufline = {
         require("nvchad_ui.tabufline").tabuflinePrev()
       end,
       "Goto prev buffer",
+    },
+
+    -- move to buffers of specific number
+    ["¡"] = {
+      function()
+        vim.api.nvim_set_current_buf(vim.t.bufs[1])
+      end,
+      "Goto first buffer",
+    },
+
+    ["™"] = {
+      function()
+        vim.api.nvim_set_current_buf(vim.t.bufs[2])
+      end,
+      "Goto second buffer",
+    },
+
+    ["£"] = {
+      function()
+        vim.api.nvim_set_current_buf(vim.t.bufs[3])
+      end,
+      "Goto third buffer",
     },
 
     -- close buffer + hide terminal buffer
