@@ -215,6 +215,14 @@ M.nvterm = {
       "Toggle vertical term",
     },
 
+    ["<F9>"] = {
+      function()
+        require("nvterm.terminal").send("python3 " .. vim.fn.expand "%", "float")
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Run python3 file in floating term",
+    },
+
     -- new
     ["<leader>-"] = {
       function()
