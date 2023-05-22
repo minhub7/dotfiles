@@ -31,7 +31,18 @@ local default_plugins = {
     end,
     config = function(_, opts)
       require "base46.term"
-      require("nvterm").setup(opts)
+      require("nvterm").setup(vim.tbl_deep_extend("force", opts, {
+        terminals = {
+          type_opts = {
+            float = {
+              row = 0.25,
+              col = 0,
+              width = 0.75,
+              height = 0.75,
+            },
+          },
+        },
+      }))
     end,
   },
 
