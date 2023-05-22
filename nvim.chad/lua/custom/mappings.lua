@@ -98,14 +98,14 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["¬"] = {
+    ["<A-l>"] = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
-    ["˙"] = {
+    ["<A-h>"] = {
       function()
         require("nvchad_ui.tabufline").tabuflinePrev()
       end,
@@ -113,21 +113,21 @@ M.tabufline = {
     },
 
     -- move to buffers of specific number
-    ["¡"] = {
+    ["<A-1>"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[1])
       end,
       "Goto first buffer",
     },
 
-    ["™"] = {
+    ["<A-2>"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[2])
       end,
       "Goto second buffer",
     },
 
-    ["£"] = {
+    ["<A-3>"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[3])
       end,
@@ -135,7 +135,7 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["œ"] = {
+    ["<A-q>"] = {
       function()
         require("nvchad_ui.tabufline").close_buffer()
       end,
