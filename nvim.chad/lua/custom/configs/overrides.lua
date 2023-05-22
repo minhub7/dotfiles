@@ -64,6 +64,10 @@ M.nvimtree = {
   modified = {
     enable = true,
   },
+
+  view = {
+    preserve_window_proportions = true,
+  },
 }
 
 M.cmp = {
