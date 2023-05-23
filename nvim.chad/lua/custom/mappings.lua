@@ -50,11 +50,10 @@ M.disabled = {
 }
 
 M.general = {
-
-  i = {
-    ["<C-l>"] = { 'copilot#Accept("<CR>")', "Accept copilot suggestion", opts = { silent = true, expr = true } },
-  },
   n = {
+    ["<Tab>"] = { ">>", "Append indentation" },
+    ["<S-Tab>"] = { "<<", "Delete indentation" },
+
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-x>"] = { "dd", "Cut current line" },
 
@@ -154,7 +153,7 @@ M.comment = {
 
   -- toggle comment in both modes
   n = {
-    ["<C-/>"] = {
+    ["gcc"] = {
       function()
         require("Comment.api").toggle.linewise.current()
       end,
@@ -163,7 +162,7 @@ M.comment = {
   },
 
   v = {
-    ["<C-/>"] = {
+    ["gc"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "Toggle comment",
     },
