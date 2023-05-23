@@ -67,6 +67,11 @@ M.general = {
     ["+"] = { "<cmd> vertical resize +2 <CR>", "Resize vertical window +2" },
     ["<PageUp>"] = { "<cmd> resize +2 <CR>", "Resize window +2" },
     ["<PageDown>"] = { "<cmd> resize -2 <CR>", "Resize window -2" },
+
+    -- diagnostic
+    ["<leader>d"] = { vim.diagnostic.open_float, "open float diagnostics", opts = { noremap = true, silent = true } },
+    ["[d"] = { vim.diagnostic.goto_prev, "Go to previous diagnostics", opts = { noremap = true, silent = true } },
+    ["]d"] = { vim.diagnostic.goto_next, "Go to next diagnostics", opts = { noremap = true, silent = true } },
   },
 
   t = {
