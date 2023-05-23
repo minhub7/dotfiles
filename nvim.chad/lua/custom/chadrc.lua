@@ -14,6 +14,24 @@ M.ui = {
   cmp = {},
   telescope = { style = "bordered" },
 
+  statusline = {
+    overriden_modules = function()
+      local st_modules = require "nvchad_ui.statusline.default"
+
+      return {
+        cursor_position = function()
+          local line = vim.fn.line "."
+          local col = vim.fn.virtcol "."
+
+          -- lets store current logs
+          local cp = st_modules.cursor_position()
+
+          return string.format("%3d:%-4d", line, col) .. cp
+        end,
+      }
+    end,
+  },
+
   tabufline = {
     show_numbers = true,
   },
