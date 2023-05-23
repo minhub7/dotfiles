@@ -13,5 +13,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+vim.diagnostic.config {
+  virtual_text = false,
+  underline = true,
+}
+
 --
 -- lspconfig.pyright.setup { blabla}
