@@ -17,21 +17,23 @@ M.ui = {
   statusline = {
     overriden_modules = function()
       local st_modules = require "nvchad_ui.statusline.default"
-
+      local fn = vim.fn
+      local sep_l = ""
       return {
         cursor_position = function()
-          local line = vim.fn.line "."
-          local col = vim.fn.virtcol "."
+          -- default cursor_position module
+          local line = fn.line "."
+          local col = fn.virtcol "."
+          local total_line = fn.line "$"
 
-          -- lets store current logs
-          local cp = st_modules.cursor_position()
-          local words = {}
-          for w in string.gmatch(cp, "%S+") do
-            table.insert(words, w)
-          end
-          local icon, text = table.concat({ words[1], words[2] }, " "), words[3]
+          local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
+          local chad = string.format(" %d:%d", line, col) .. " │ "
+          local text = math.modf((line / total_line) * 100) .. tostring "%%"
+          text = string.format("%4s", text)
+          text = (line == 1 and "Top") or text
+          text = (line == total_line and "Bot") or text
 
-          return icon .. string.format(" %3d:%-3d ", line, col) .. text .. " "
+          return left_sep .. "%#St_pos_text#" .. chad .. text .. " "
         end,
       }
     end,
