@@ -25,8 +25,13 @@ M.ui = {
 
           -- lets store current logs
           local cp = st_modules.cursor_position()
+          local words = {}
+          for w in string.gmatch(cp, "%S+") do
+            table.insert(words, w)
+          end
+          local icon, text = table.concat({ words[1], words[2] }, " "), words[3]
 
-          return string.format("%3d:%-4d", line, col) .. cp
+          return icon .. string.format(" %3d:%-3d ", line, col) .. text .. " "
         end,
       }
     end,
