@@ -151,4 +151,4 @@ Minho Kim - minhub6@gmail.com
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [license-shield]: https://img.shields.io/github/license/minhub7/dotfiles.svg?style=for-the-badge
-[license-url]: https://github.com/minhub7/dotfiles/blob/main/LICENSE.txt
+[license-url]: https://github.com/minhub7/dotfiles/blob/main/LICENSE
