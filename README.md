@@ -12,11 +12,7 @@
   </a>
 
 <h3 align="center">dotfiles</h3>
-
-<p align="center">
-    dotfiles for you
-    <br />
-  </p>
+<br />
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -25,9 +21,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -47,10 +40,8 @@
 ## About The Project
 
 <div align="center">
-  <p align="center">
-    <img src="assets/oh-my-posh.png" alt="oh-my-posh" width="200" height="80">
-    <img src="assets/nvim.png" alt="nvim" width="200" height="200">
-  </p>
+  <img src="assets/oh-my-posh.png" alt="oh-my-posh">
+  <img src="assets/nvim.png" alt="nvim">
 </div>
 
 This project is a command prompt configuration for beautiful and powerful
@@ -60,10 +51,10 @@ features.
 
 ### Built With
 
-- [![oh-my-zsh]][https://ohmyz.sh/]
-- [![oh-my-posh]][https://ohmyposh.dev/]
-- [![neovim]][https://neovim.io/]
-- [![tmux]][https://github.com/tmux/tmux]
+- [oh-my-zsh](https://ohmyz.sh/)
+- [oh-my-posh](https://ohmyposh.dev/)
+- [neovim](https://neovim.io/)
+- [tmux](https://github.com/tmux/tmux)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,3 +147,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Minho Kim - minhub6@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[license-shield]: https://img.shields.io/github/license/minhub7/dotfiles.svg?style=for-the-badge
+[license-url]: https://github.com/minhub7/dotfiles/blob/main/LICENSE.txt
