@@ -40,14 +40,12 @@
 ## About The Project
 
 <div align="center">
-  <img src="assets/oh-my-posh.png" alt="oh-my-posh">
+  <img src="assets/ohmyposh.png" alt="oh-my-posh">
   <img src="assets/nvim.png" alt="nvim">
 </div>
 
 This project is a command prompt configuration for beautiful and powerful
 features.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Built With
 
@@ -67,38 +65,39 @@ features.
 - snap
 - Nodejs
 - oh-my-posh
-- Neovim (>=0.8)
-- NvChad
+  - zplug (for management oh-my-zsh plugins)
+  - oh-my-posh >= 15.4.0
+- Neovim >=0.8.1
+  - NvChad
 - tmux
 - Copilot (optional)
 
-#### oh-my-zsh
+1. oh-my-zsh
 
-you have to install zshell and oh-my-zsh & zplug & oh-my-posh\
-And copy 'zshrc' files to your home directory or make symbolic link\
-If you works on conda environment, modify some codes
+   you have to install zshell and oh-my-zsh & zplug & oh-my-posh\
+   And copy 'zshrc' files to your home directory or make symbolic link\
+   If you works on conda environment, modify some codes
 
-#### Neovim
+2. Neovim
 
-Recommanded using snap
+   Recommanded using snap
 
-```sh
-sudo apt-get install snap
-snap install nvim --classic
-```
+   ```sh
+   sudo apt-get install snap
+   snap install nvim --classic
+   ```
 
-or
+   or
 
-```sh
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update -y
-sudo apt-get install neovim -y
-```
+   ```sh
+   sudo add-apt-repository ppa:neovim-ppa/stable
+   sudo apt-get update -y
+   sudo apt-get install neovim -y
+   ```
 
-#### tmux
+3. tmux
 
-Settings for some key bindings in tmux.conf file This is an example of how to
-list things you need to use the software and how to install them.
+   Settings for some key bindings in tmux.conf file
 
 ### Installation
 
@@ -127,7 +126,7 @@ list things you need to use the software and how to install them.
   - [x] make custom themes
 - [x] Update NvChad
   - [x] change floating terminal size
-  - [x] add location in status line (such as row:column | %)
+  - [x] add location in status line (such as row : column)
   - [x] add copilot.lua
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
