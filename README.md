@@ -7,7 +7,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/minhub7/dotfiles">
+  <a href="https://github.com/minocrafft/dotfiles">
     <img src="assets/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -103,7 +103,7 @@ features.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/minhub7/dotfiles.git
+   git clone https://github.com/minocrafft/dotfiles.git
    ```
 2. Make symbolic link for zsh & neovim
    ```sh
@@ -143,12 +143,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Minho Kim - minhub6@gmail.com
+Minho Kim - minocrafft@gmail.com
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[license-shield]: https://img.shields.io/github/license/minhub7/dotfiles.svg?style=for-the-badge
-[license-url]: https://github.com/minhub7/dotfiles/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/minocrafft/dotfiles.svg?style=for-the-badge
+[license-url]: https://github.com/minocrafft/dotfiles/blob/main/LICENSE
