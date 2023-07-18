@@ -10,6 +10,7 @@ M.treesitter = {
     "markdown_inline",
     "python",
     "rust",
+    "dart",
   },
   indent = {
     enable = true,
@@ -44,15 +45,15 @@ M.nvimtree = {
     enable = true,
     ignore = false,
   },
-  diagnostics = {
-    enable = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
+  -- diagnostics = {
+  --   enable = true,
+  --   icons = {
+  --     hint = "",
+  --     info = "",
+  --     warning = "",
+  --     error = "",
+  --   },
+  -- },
   renderer = {
     highlight_git = true,
     full_name = true,
@@ -77,9 +78,23 @@ M.cmp = {
   },
 }
 
+M.nvterm = {
+  terminals = {
+    type_opts = {
+      float = {
+        row = 0.25,
+        col = 0,
+        width = 0.75,
+        height = 0.75,
+      },
+    },
+  },
+}
+
 M.copilot = {
   suggestion = {
     enable = false,
+    auto_trigger = true,
   },
   panel = {
     enable = false,

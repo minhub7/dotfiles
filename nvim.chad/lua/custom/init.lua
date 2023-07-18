@@ -1,57 +1,24 @@
 -- local autocmd = vim.api.nvim_create_autocmd
-
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+local opt = vim.opt
 
 vim.scriptencoding = "utf-8"
 vim.g.copilot_no_tab_map = true
 
 --------------------------------------------------
-local options = {
-  encoding = "utf-8",
-  fileencoding = "utf-8",
-  title = true,
-  backup = false, -- don't save backup files
-  writebackup = false,
-  mouse = "a",
-  laststatus = 3, -- global statusline
-  timeoutlen = 400,
-  updatetime = 250, -- faster completion
 
-  -- line numbers
-  number = true,
-  relativenumber = true,
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+opt.title = true
+opt.backup = false -- don't save backup files
+opt.writebackup = false
+opt.number = true
+opt.relativenumber = true
+opt.backspace = { "start", "eol", "indent" }
 
-  -- tabs & indentation
-  tabstop = 4,
-  shiftwidth = 4,
-  smarttab = true,
-  expandtab = true,
-  autoindent = true,
-  smartindent = true,
+-- tabs & indentation
+opt.smarttab = true
+opt.autoindent = true
+opt.smartindent = true
 
-  -- cursor line
-  cursorline = true,
-
-  -- appearance
-  termguicolors = true,
-
-  -- backspace
-  backspace = { "start", "eol", "indent" },
-
-  -- split windows
-  splitright = true,
-  splitbelow = true,
-
-  -- search settings
-  smartcase = true,
-  ignorecase = true,
-  hlsearch = true,
-}
-
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+-- search settings
+opt.hlsearch = true

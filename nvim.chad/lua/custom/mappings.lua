@@ -17,16 +17,12 @@ M.disabled = {
     ["<S-Tab>"] = "",
     ["<leader>x"] = "",
 
+    -- lspconfig
+    ["<leader>f"] = "",
+
     -- nvim-tree
     ["<C-n>"] = "",
     ["<leader>e"] = "",
-
-    -- tabufline
-    ["<tab>"] = "",
-    ["<S-tab>"] = "",
-
-    -- Comment
-    ["<leader>/"] = "",
 
     -- nvterm
     ["<A-i>"] = "",
@@ -38,6 +34,7 @@ M.disabled = {
 
   t = {
     ["<C-x>"] = "",
+
     -- nvterm
     ["<A-i>"] = "",
     ["<A-h>"] = "",
@@ -45,7 +42,6 @@ M.disabled = {
   },
 
   v = {
-    ["<leader>/"] = "",
   },
 }
 
@@ -67,10 +63,6 @@ M.general = {
     ["<PageUp>"] = { "<cmd> resize +2 <CR>", "Resize window +2" },
     ["<PageDown>"] = { "<cmd> resize -2 <CR>", "Resize window -2" },
 
-    -- diagnostic
-    ["<leader>d"] = { vim.diagnostic.open_float, "open float diagnostics", opts = { noremap = true, silent = true } },
-    ["[d"] = { vim.diagnostic.goto_prev, "Go to previous diagnostics", opts = { noremap = true, silent = true } },
-    ["]d"] = { vim.diagnostic.goto_next, "Go to next diagnostics", opts = { noremap = true, silent = true } },
   },
 
   t = {
@@ -84,32 +76,19 @@ M.general = {
   },
 }
 
--- more keybinds!
-M.nvimtree = {
-  plugin = true,
-
-  n = {
-    -- toggle
-    ["<F1>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
-
-    -- focus
-    ["<leader>n"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
-  },
-}
-
 M.tabufline = {
   plugin = true,
 
   n = {
     -- cycle through buffers
-    ["<A-l>"] = {
+    ["¬"] = {
       function()
         require("nvchad_ui.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
-    ["<A-h>"] = {
+    ["˙"] = {
       function()
         require("nvchad_ui.tabufline").tabuflinePrev()
       end,
@@ -117,21 +96,21 @@ M.tabufline = {
     },
 
     -- move to buffers of specific number
-    ["<A-1>"] = {
+    ["¡"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[1])
       end,
       "Goto first buffer",
     },
 
-    ["<A-2>"] = {
+    ["™"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[2])
       end,
       "Goto second buffer",
     },
 
-    ["<A-3>"] = {
+    ["£"] = {
       function()
         vim.api.nvim_set_current_buf(vim.t.bufs[3])
       end,
@@ -139,7 +118,7 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["<A-q>"] = {
+    ["œ"] = {
       function()
         require("nvchad_ui.tabufline").close_buffer()
       end,
@@ -166,6 +145,41 @@ M.comment = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "Toggle comment",
     },
+  },
+}
+
+M.lspconfig = {
+    ["<leader>d"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "Floating diagnostic",
+    },
+
+    ["[d"] = {
+      function()
+        vim.diagnostic.goto_prev { float = { border = "rounded" } }
+      end,
+      "Goto prev",
+    },
+
+    ["]d"] = {
+      function()
+        vim.diagnostic.goto_next { float = { border = "rounded" } }
+      end,
+      "Goto next",
+    },
+}
+
+M.nvimtree = {
+  plugin = true,
+
+  n = {
+    -- toggle
+    ["<F1>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+
+    -- focus
+    ["<leader>n"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 

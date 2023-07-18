@@ -11,14 +11,11 @@ M.ui = {
   hl_override = highlights.override,
   hl_add = highlights.add,
 
-  cmp = {},
   telescope = { style = "bordered" },
 
   statusline = {
     overriden_modules = function()
-      local st_modules = require "nvchad_ui.statusline.default"
       local fn = vim.fn
-      local sep_l = ""
       return {
         cursor_position = function()
           -- default cursor_position module
@@ -26,9 +23,10 @@ M.ui = {
           local col = fn.virtcol "."
           local total_line = fn.line "$"
 
-          local left_sep = "%#St_pos_sep#" .. sep_l .. "%#St_pos_icon#" .. " "
+          local left_sep = "%#St_pos_sep#" .. "" .. "%#St_pos_icon#" .. " "
           local chad = string.format(" %d:%d", line, col) .. " │ "
           local text = math.modf((line / total_line) * 100) .. tostring "%%"
+
           text = string.format("%4s", text)
           text = (line == 1 and "Top") or text
           text = (line == total_line and "Bot") or text
