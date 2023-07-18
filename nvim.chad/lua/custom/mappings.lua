@@ -149,6 +149,7 @@ M.comment = {
 }
 
 M.lspconfig = {
+  n = {
     ["<leader>d"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
@@ -169,6 +170,7 @@ M.lspconfig = {
       end,
       "Goto next",
     },
+  }
 }
 
 M.nvimtree = {
