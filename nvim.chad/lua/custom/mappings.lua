@@ -13,8 +13,8 @@ M.disabled = {
     ["<leader>rn"] = "",
 
     -- tabufline
-    ["<Tab>"] = "",
-    ["<S-Tab>"] = "",
+    ["<tab>"] = "",
+    ["<S-tab>"] = "",
     ["<leader>x"] = "",
 
     -- lspconfig
@@ -47,8 +47,8 @@ M.disabled = {
 
 M.general = {
   n = {
-    ["<Tab>"] = { ">>", "Append indentation" },
-    ["<S-Tab>"] = { "<<", "Delete indentation" },
+    ["<tab>"] = { ">>", "Append indentation" },
+    ["<S-tab>"] = { "<<", "Delete indentation" },
 
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<C-x>"] = { "dd", "Cut current line" },
