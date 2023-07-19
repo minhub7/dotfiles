@@ -34,7 +34,7 @@ M.mason = {
 
     -- rust
     "rust-analyzer",
-    "rustfmt",
+    -- "rustfmt", is deprecated
   },
 }
 
@@ -76,6 +76,14 @@ M.cmp = {
   completion = {
     completeopt = "menu,menuone,noselect",
   },
+  sources = {
+    { name = "copilot", group_index = 2 },
+    { name = "nvim_lsp", group_index = 2 },
+    { name = "luasnip", group_index = 2 },
+    { name = "buffer", group_index = 2 },
+    { name = "nvim_lua", group_index = 2 },
+    { name = "path", group_index = 2 },
+  },
 }
 
 M.nvterm = {
@@ -94,7 +102,6 @@ M.nvterm = {
 M.copilot = {
   suggestion = {
     enable = false,
-    auto_trigger = true,
   },
   panel = {
     enable = false,
