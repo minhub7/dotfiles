@@ -77,12 +77,18 @@ M.cmp = {
     completeopt = "menu,menuone,noselect",
   },
   sources = {
-    { name = "copilot", group_index = 2 },
+    { name = "copilot",  group_index = 2 },
     { name = "nvim_lsp", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    { name = "buffer", group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
+    { name = "buffer",   group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
-    { name = "path", group_index = 2 },
+    { name = "path",     group_index = 2 },
+  },
+  mapping = {
+    ["<CR>"] = require("cmp").mapping.confirm {
+      behavior = require("cmp").ConfirmBehavior.Insert,
+      select = false,
+    },
   },
 }
 

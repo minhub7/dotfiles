@@ -79,7 +79,7 @@ local plugins = {
   -- Copilot
   {
     "zbirenbaum/copilot.lua",
-    lazy=false,
+    lazy = false,
     event = { "InsertEnter" },
     cmd = { "Copilot" },
     opts = overrides.copilot,
@@ -100,14 +100,14 @@ local plugins = {
 
   -- flutter
   {
-    'akinsho/flutter-tools.nvim',
-    lazy=false,
-    dependencies={
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
     },
-    opts={},
-  }
+    opts = {},
+  },
 
   -- To make a plugin not be loaded
   -- {
