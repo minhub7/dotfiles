@@ -14,6 +14,9 @@ M.treesitter = {
   },
   indent = {
     enable = true,
+    disable = {
+      "dart"
+    }
   },
 }
 
