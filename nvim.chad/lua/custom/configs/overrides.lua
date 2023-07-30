@@ -15,8 +15,8 @@ M.treesitter = {
   indent = {
     enable = true,
     disable = {
-      "dart"
-    }
+      "dart",
+    },
   },
 }
 
@@ -38,6 +38,9 @@ M.mason = {
     -- rust
     "rust-analyzer",
     -- "rustfmt", is deprecated
+
+    -- dart
+    "dart_format",
   },
 }
 
