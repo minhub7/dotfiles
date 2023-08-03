@@ -121,7 +121,6 @@ alias vim=nvim
 # alias for python
 alias python=python3
 alias pip=pip3
-export PTRSHL=$(poetry env info --path)/bin/activate
 
 # alias for lsd plugins, it requires 'lsd' to be installed
 alias ls="lsd --no-symlink"
@@ -153,4 +152,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
