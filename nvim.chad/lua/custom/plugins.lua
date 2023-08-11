@@ -85,19 +85,6 @@ local plugins = {
     opts = overrides.copilot,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = overrides.cmp,
-  },
-
   -- flutter
   {
     "akinsho/flutter-tools.nvim",
@@ -106,7 +93,6 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim",
     },
-    opts = {},
   },
 
   -- for rust
@@ -126,8 +112,18 @@ local plugins = {
       require("rust-tools").setup()
     end,
   },
+
   {
     "mfussenegger/nvim-dap",
+  },
+
+  {
+    "saecki/crates.nvim",
+    ft = { "rust", "toml" },
+    config = function()
+      require("crates").setup()
+      require("crates").show()
+    end,
   },
 
   -- edit markdown in neovim
@@ -136,6 +132,21 @@ local plugins = {
     build = "cd app && npm install",
     ft = "markdown",
   },
+
+  -- reconfigure nvim-cmp
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
+    opts = overrides.cmp,
+  },
+
 }
 
 require("cmp").event:on("menu_opened", function()

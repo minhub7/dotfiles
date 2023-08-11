@@ -51,15 +51,6 @@ M.nvimtree = {
     enable = true,
     ignore = false,
   },
-  -- diagnostics = {
-  --   enable = true,
-  --   icons = {
-  --     hint = "",
-  --     info = "",
-  --     warning = "",
-  --     error = "",
-  --   },
-  -- },
   renderer = {
     highlight_git = true,
     full_name = true,
@@ -89,6 +80,7 @@ M.cmp = {
     { name = "buffer",   group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path",     group_index = 2 },
+    { name = "crates",   group_index = 2 },
   },
   mapping = {
     ["<CR>"] = require("cmp").mapping.confirm {
