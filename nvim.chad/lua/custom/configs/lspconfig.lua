@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "lua_ls", "pyright", "dartls" }
+local servers = { "lua_ls", "pyright", "dartls", "rust_analyzer" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -26,6 +26,19 @@ lspconfig.lua_ls.setup {
       diagnostics = {
         globals = { "vim" },
       },
+    },
+  },
+}
+
+lspconfig.rust_analyzer.setup {
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      -- checkOnSave = {
+      --   command = "clippy",
+      -- },
     },
   },
 }

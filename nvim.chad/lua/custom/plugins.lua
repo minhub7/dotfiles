@@ -109,40 +109,33 @@ local plugins = {
     opts = {},
   },
 
-  -- csv
+  -- for rust
   {
-    "cameron-wags/rainbow_csv.nvim",
-    config = true,
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pip",
-      "rfc_csv",
-      "frc_semicolon",
-    },
-    cmd = {
-      "RainbowDelim",
-      "RainbowDelimSimple",
-      "RainbowDelimQuoted",
-      "RainbowMultiDelim",
-    },
+    "rust-lang/rust.vim",
+    ft = "rust",
+    config = function()
+      vim.g.rustfmt_autosave = 1
+    end,
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    config = function()
+      require("rust-tools").setup()
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap",
+  },
 
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  -- edit markdown in neovim
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    ft = "markdown",
+  },
 }
 
 require("cmp").event:on("menu_opened", function()
