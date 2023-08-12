@@ -272,4 +272,15 @@ M.MarkdownPreview = {
   },
 }
 
+M.crates = {
+  n = {
+    ["<leader>uc"] = {
+      function()
+        require("crates").upgrade_all_crates()
+      end,
+      "update crates",
+    },
+  },
+}
+
 return M
