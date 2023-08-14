@@ -85,6 +85,55 @@ local plugins = {
     opts = overrides.copilot,
   },
 
+  -- flutter
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+  },
+
+  -- for rust
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    config = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+  },
+
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    config = function()
+      require("rust-tools").setup()
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "saecki/crates.nvim",
+    ft = { "rust", "toml" },
+    config = function()
+      require("crates").setup()
+      require("crates").show()
+    end,
+  },
+
+  -- edit markdown in neovim
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    ft = "markdown",
+  },
+
+  -- reconfigure nvim-cmp
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -98,51 +147,6 @@ local plugins = {
     opts = overrides.cmp,
   },
 
-  -- flutter
-  {
-    "akinsho/flutter-tools.nvim",
-    lazy = false,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
-    },
-    opts = {},
-  },
-
-  -- csv
-  {
-    "cameron-wags/rainbow_csv.nvim",
-    config = true,
-    ft = {
-      "csv",
-      "tsv",
-      "csv_semicolon",
-      "csv_whitespace",
-      "csv_pip",
-      "rfc_csv",
-      "frc_semicolon",
-    },
-    cmd = {
-      "RainbowDelim",
-      "RainbowDelimSimple",
-      "RainbowDelimQuoted",
-      "RainbowMultiDelim",
-    },
-  },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
 }
 
 require("cmp").event:on("menu_opened", function()

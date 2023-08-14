@@ -40,9 +40,6 @@ M.disabled = {
     ["<A-h>"] = "",
     ["<A-v>"] = "",
   },
-
-  v = {
-  },
 }
 
 M.general = {
@@ -62,7 +59,6 @@ M.general = {
     ["+"] = { "<cmd> vertical resize +2 <CR>", "Resize vertical window +2" },
     ["<PageUp>"] = { "<cmd> resize +2 <CR>", "Resize window +2" },
     ["<PageDown>"] = { "<cmd> resize -2 <CR>", "Resize window -2" },
-
   },
 
   t = {
@@ -83,14 +79,14 @@ M.tabufline = {
     -- cycle through buffers
     ["<A-l>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
     ["<A-h>"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
       "Goto prev buffer",
     },
@@ -120,7 +116,7 @@ M.tabufline = {
     -- close buffer + hide terminal buffer
     ["<A-q>"] = {
       function()
-        require("nvchad_ui.tabufline").close_buffer()
+        require("nvchad.tabufline").close_buffer()
       end,
       "Close buffer",
     },
@@ -170,7 +166,7 @@ M.lspconfig = {
       end,
       "Goto next",
     },
-  }
+  },
 }
 
 M.nvimtree = {
@@ -267,6 +263,23 @@ M.GotoPreview = {
     ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "goto implementation" },
     ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "goto references" },
     ["gq"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "all preview windows close" },
+  },
+}
+
+M.MarkdownPreview = {
+  n = {
+    ["<leader>mp"] = { "<cmd>MarkdownPreview<CR>", "Markdown preview" },
+  },
+}
+
+M.crates = {
+  n = {
+    ["<leader>uc"] = {
+      function()
+        require("crates").upgrade_all_crates()
+      end,
+      "update crates",
+    },
   },
 }
 
