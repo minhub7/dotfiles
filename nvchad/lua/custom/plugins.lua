@@ -126,7 +126,18 @@ local plugins = {
     end,
   },
 
-  -- edit markdown in neovim
+  -- Edit markdown and notes
+  {
+    "renerocksai/telekasten.nvim",
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telekasten").setup({
+        home = vim.fn.expand("~/wiki"),
+      })
+    end,
+  },
+
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -146,7 +157,6 @@ local plugins = {
     },
     opts = overrides.cmp,
   },
-
 }
 
 require("cmp").event:on("menu_opened", function()
