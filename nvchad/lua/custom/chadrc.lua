@@ -6,7 +6,7 @@ local highlights = require "custom.highlights"
 
 M.ui = {
   theme = "chadracula",
-  theme_toggle = { "everforest", "chadracula" },
+  theme_toggle = { "chadracula", "everforest" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
