@@ -38,12 +38,15 @@ symbol = " "
 symbol = " "
 
 [git_status]
-untracked = '[ ?$count]($style)'
-stashed = '[ \$$count]($style)'
-modified = '[ !$count]($style)'
-staged = '[ +$count]($style)'
-renamed = '[ »$count]($style)'
-deleted = '[ ✘$count]($style)'
+ahead = ' ⇡${count}'
+diverged = ' ⇕⇡${ahead_count}⇣${behind_count}'
+behind = ' ⇣${count}'
+untracked = ' ?${count}'
+stashed = ' \$${count}'
+modified = ' !${count}'
+staged = ' +${count}'
+renamed = ' »${count}'
+deleted = ' ✘${count}'
 
 [golang]
 symbol = " "
