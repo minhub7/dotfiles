@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Improved compatibility of back-to-top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
 <a name="readme-top"></a>
 
@@ -32,8 +32,8 @@
 ## About The Project
 
 <div align="center">
-  <img src="assets/ohmyposh.png" alt="oh-my-posh">
-  <img src="assets/nvim.png" alt="nvim">
+  <img src="assets/starship.png" alt="starship" width="90%">
+  <img src="assets/nvim.png" alt="nvim" width="90%">
 </div>
 
 This project is a command prompt configuration for beautiful and powerful
@@ -41,8 +41,8 @@ features.
 
 ### Built With
 
-- [oh-my-zsh](https://ohmyz.sh/)
-- [oh-my-posh](https://ohmyposh.dev/)
+- [zplug](https://github.com/zplug/zplug)
+- [starship](https://starship.rs/)
 - [neovim](https://neovim.io/)
 - [tmux](https://github.com/tmux/tmux)
 
@@ -56,23 +56,21 @@ features.
 
 - snap
 - Nodejs
-- oh-my-posh
-  - zplug (for management oh-my-zsh plugins)
-  - oh-my-posh >= 15.4.0
+- starship
+- zsh
+  - zplug (for management zsh plugins)
 - Neovim >=0.8.1
   - NvChad
 - tmux
 - Copilot (optional)
 
-1. oh-my-zsh
+1. **zsh**
 
-   you have to install zshell and oh-my-zsh & zplug & oh-my-posh\
-   And copy 'zshrc' files to your home directory or make symbolic link\
-   If you works on conda environment, modify some codes
+    You have to install zshell and zplug and make a symbolic link for a 'zshrc' file.
+   
+2. **Neovim**
 
-2. Neovim
-
-   Recommanded using snap
+   Recommended using snap
 
    ```sh
    sudo apt-get install snap
@@ -87,7 +85,7 @@ features.
    sudo apt-get install neovim -y
    ```
 
-3. tmux
+3. **tmux**
 
    Settings for some key bindings in tmux.conf file
 
@@ -97,11 +95,12 @@ features.
    ```sh
    git clone https://github.com/minocrafft/dotfiles.git
    ```
-2. Make symbolic link for zsh & neovim
+2. Make symbolic links for a few files
    ```sh
    cd dotfiles
-   ln -s zsh/.zshrc ~/.zshrc
-   ln -s nvim.chad/ ~/.config/nvim
+   ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+   ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+   ln -s ~/dotfiles/nvchad/ ~/.config/nvim
    ```
 3. Apply the tmux.conf file
    ```sh
@@ -114,12 +113,8 @@ features.
 
 ## Roadmap
 
-- [x] Change oh-my-zsh to oh-my-posh
-  - [x] make custom themes
-- [x] Update NvChad
-  - [x] change floating terminal size
-  - [x] add location in status line (such as row : column)
-  - [x] add copilot.lua
+- [x] Customize starship.toml
+- [ ] Search a useful plugins for zshell
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
