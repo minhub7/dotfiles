@@ -40,7 +40,9 @@ eval "$(starship init zsh)"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Set personal aliases
+#----------------------#
+# Set personal aliases #
+#----------------------#
 # For a full list of active aliases, run `alias`.
 alias vim=nvim
 
@@ -69,6 +71,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+#-----------------------------#
+# Setup Environment Variables #
+#-----------------------------#
 # chruby ruby-3.1.2
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
@@ -79,5 +84,4 @@ export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 
-# Tmux with conda
 [[ -z $TMUX ]] || conda deactivate; conda activate $CONDA_PREFIX
