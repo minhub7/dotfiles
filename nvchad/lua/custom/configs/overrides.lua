@@ -74,13 +74,13 @@ M.cmp = {
     completeopt = "menu,menuone,noselect",
   },
   sources = {
-    { name = "copilot", group_index = 2 },
+    { name = "copilot",  group_index = 2 },
     { name = "nvim_lsp", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    { name = "buffer", group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
+    { name = "buffer",   group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
-    { name = "path", group_index = 2 },
-    { name = "crates", group_index = 2 },
+    { name = "path",     group_index = 2 },
+    { name = "crates",   group_index = 2 },
   },
   mapping = {
     ["<CR>"] = require("cmp").mapping.confirm {
@@ -125,8 +125,7 @@ M.noice = {
   -- you can enable a preset for easier configuration
   presets = {
     long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = true, -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = true, -- add a border to hover docs and signature help
+    lsp_doc_border = true,        -- add a border to hover docs and signature help
   },
 }
 
