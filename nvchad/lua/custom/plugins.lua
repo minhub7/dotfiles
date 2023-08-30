@@ -85,6 +85,20 @@ local plugins = {
     opts = overrides.copilot,
   },
 
+  -- reconfigure nvim-cmp for copilot
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
+    opts = overrides.cmp,
+  },
+
   -- flutter
   {
     "akinsho/flutter-tools.nvim",
@@ -132,9 +146,9 @@ local plugins = {
     lazy = false,
     dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
-      require("telekasten").setup({
-        home = vim.fn.expand("~/wiki"),
-      })
+      require("telekasten").setup {
+        home = vim.fn.expand "~/wiki",
+      }
     end,
   },
 
@@ -144,27 +158,24 @@ local plugins = {
     ft = "markdown",
   },
 
-  -- reconfigure nvim-cmp
+  -- for messages
   {
-    "hrsh7th/nvim-cmp",
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = overrides.noice,
     dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
     },
-    opts = overrides.cmp,
   },
 }
 
-require("cmp").event:on("menu_opened", function()
-  vim.b.copilot_suggestion_hidden = true
-end)
-
-require("cmp").event:on("menu_closed", function()
-  vim.b.copilot_suggestion_hidden = false
-end)
+-- require("cmp").event:on("menu_opened", function()
+--   vim.b.copilot_suggestion_hidden = true
+-- end)
+--
+-- require("cmp").event:on("menu_closed", function()
+--   vim.b.copilot_suggestion_hidden = false
+-- end)
 
 return plugins

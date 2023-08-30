@@ -7,15 +7,14 @@ end
 local b = null_ls.builtins
 
 local sources = {
-
   -- webdev stuff
-  b.formatting.deno_lint, -- choosed deno for ts/js files cuz its very fast!
+  -- b.formatting.deno_lint, -- for ts/js files
   b.formatting.prettierd,
 
   -- Lua
   b.formatting.stylua,
 
-  -- python formatter
+  -- python
   b.formatting.black,
 
   -- rust
