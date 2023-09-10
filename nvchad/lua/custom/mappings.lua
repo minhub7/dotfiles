@@ -32,6 +32,7 @@ M.disabled = {
     ["<leader>v"] = "",
 
     -- telescope
+    ["<leader>fw"] = "",
     ["<leader>cm"] = "",
   },
 
@@ -278,6 +279,7 @@ M.telescope = {
   plugin = true,
 
   n = {
+    ["<leader>fg"] = { "<cmd>Telescope live_grep <CR>", "Live grep" },
     ["<leader>fm"] = { "<cmd>Telescope media_files <CR>", "Find media files" },
 
     -- git
@@ -293,11 +295,11 @@ M.telekasten = {
     ["<leader>zn"] = { "<cmd>Telekasten new_note<CR>", "Make new note" },
     ["<leader>zf"] = { "<cmd>Telekasten find_notes<CR>", "Find notes" },
     ["<leader>zg"] = { "<cmd>Telekasten search_notes<CR>", "Search note like grep" },
-    ["<leader>zd"] = { "<cmd>Telekasten goto_today<CR>", "Go to today" },
+    ["<leader>zt"] = { "<cmd>Telekasten goto_today<CR>", "Go to today" },
     ["<leader>zz"] = { "<cmd>Telekasten follow_link<CR>", "Follow link" },
     ["<leader>zc"] = { "<cmd>Telekasten show_calendar<CR>", "Show calendar" },
     ["<leader>zb"] = { "<cmd>Telekasten show_backlinks<CR>", "Show back links" },
-    ["<leader>zI"] = { "<cmd>Telekasten insert_img_link<CR>", "Insert image link" },
+    ["<leader>zi"] = { "<cmd>Telekasten insert_img_link<CR>", "Insert image link" },
   },
 
   i = {

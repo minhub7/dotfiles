@@ -119,6 +119,7 @@ local plugins = {
 
   {
     "iamcco/markdown-preview.nvim",
+    lazy = false,
     build = "cd app && npm install",
     ft = "markdown",
   },
@@ -127,7 +128,7 @@ local plugins = {
   {
     "nvim-telescope/telescope-media-files.nvim",
     config = function()
-      require("telescope").load_extension "media_files"
+      require("telescope").load_extension("media_files")
     end,
   },
 
