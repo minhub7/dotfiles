@@ -273,7 +273,6 @@ M.crates = {
 
 M.telekasten = {
   n = {
-    -- Launch panel
     ["<leader>z"] = { "<cmd>Telekasten panel<CR>", "Open panel" },
 
     -- Most used functions
@@ -288,7 +287,6 @@ M.telekasten = {
   },
 
   i = {
-    -- Call insert link automatically
     ["[["] = { "<cmd>Telekasten insert_link<CR>", "Insert links" },
   },
 }

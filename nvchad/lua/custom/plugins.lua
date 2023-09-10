@@ -3,7 +3,9 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
-  -- Override plugin definition options
+  ----------------------------------------
+  -- Override plugin definition options --
+  ----------------------------------------
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -21,29 +23,26 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
   {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
 
-  -- Install a plugin
-  -- better-escape
+  -----------------------
+  -- Better experience --
+  -----------------------
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -52,7 +51,6 @@ local plugins = {
     end,
   },
 
-  -- code Analysis
   {
     "simrat39/symbols-outline.nvim",
     config = function()
@@ -65,7 +63,6 @@ local plugins = {
     },
   },
 
-  -- go to preview
   {
     "rmagatti/goto-preview",
     config = function()
@@ -74,6 +71,16 @@ local plugins = {
         height = 40,
       }
     end,
+  },
+
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = overrides.noice,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
   },
 
   -- Copilot
@@ -85,7 +92,6 @@ local plugins = {
     opts = overrides.copilot,
   },
 
-  -- reconfigure nvim-cmp for copilot
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -99,7 +105,28 @@ local plugins = {
     opts = overrides.cmp,
   },
 
-  -- flutter
+  -- Note-takings
+  {
+    "renerocksai/telekasten.nvim",
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telekasten").setup {
+        home = vim.fn.expand "~/SecondBrain",
+      }
+    end,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    build = "cd app && npm install",
+    ft = "markdown",
+  },
+
+  ----------------------------
+  -- For specific languages --
+  ----------------------------
+  -- Flutter
   {
     "akinsho/flutter-tools.nvim",
     lazy = false,
@@ -109,7 +136,7 @@ local plugins = {
     },
   },
 
-  -- for rust
+  -- Rust
   {
     "rust-lang/rust.vim",
     ft = "rust",
@@ -127,9 +154,7 @@ local plugins = {
     end,
   },
 
-  {
-    "mfussenegger/nvim-dap",
-  },
+  { "mfussenegger/nvim-dap" },
 
   {
     "saecki/crates.nvim",
@@ -139,36 +164,6 @@ local plugins = {
       require("crates").show()
     end,
   },
-
-  -- Edit markdown and notes
-  {
-    "renerocksai/telekasten.nvim",
-    lazy = false,
-    dependencies = { "nvim-telescope/telescope.nvim" },
-    config = function()
-      require("telekasten").setup {
-        home = vim.fn.expand "~/wiki",
-      }
-    end,
-  },
-
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    ft = "markdown",
-  },
-
-  -- for messages
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = overrides.noice,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    },
-  },
-
 }
 
 return plugins
