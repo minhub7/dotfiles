@@ -271,6 +271,14 @@ M.crates = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    ["<leader>fm"] = { "<cmd>Telescope media_files <CR>", "Find media files" },
+  }
+}
+
 M.telekasten = {
   n = {
     ["<leader>z"] = { "<cmd>Telekasten panel<CR>", "Open panel" },
