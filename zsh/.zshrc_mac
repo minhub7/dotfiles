@@ -4,10 +4,8 @@ export PATH=/opt/homebrew/bin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-export ZPLUG=/opt/homebrew/opt/zplug
-
-
 # zplug configuration
+export ZPLUG=/opt/homebrew/opt/zplug
 source $ZPLUG/init.zsh
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
@@ -44,6 +42,7 @@ eval "$(starship init zsh)"
 # Set personal aliases #
 #----------------------#
 # For a full list of active aliases, run `alias`.
+alias hist="history -i"
 alias vim=nvim
 
 # python
@@ -74,6 +73,19 @@ unset __conda_setup
 #-----------------------------#
 # Setup Environment Variables #
 #-----------------------------#
+# ZSH History
+setopt EXTENDED_HISTORY
+
+# export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+export HISTTIMEFORMAT="[%F %T] "
+
+setopt SHARE_HISTORY  # equivalent of INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+
 # chruby ruby-3.1.2
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
