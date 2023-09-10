@@ -30,6 +30,9 @@ M.disabled = {
     ["<A-v>"] = "",
     ["<leader>h"] = "",
     ["<leader>v"] = "",
+
+    -- telescope
+    ["<leader>cm"] = "",
   },
 
   t = {
@@ -276,7 +279,10 @@ M.telescope = {
 
   n = {
     ["<leader>fm"] = { "<cmd>Telescope media_files <CR>", "Find media files" },
-  }
+
+    -- git
+    ["<leader>gc"] = { "<cmd>Telescope git_commits <CR>", "Git commits" },
+  },
 }
 
 M.telekasten = {
