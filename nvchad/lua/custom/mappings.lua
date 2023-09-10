@@ -292,10 +292,11 @@ M.telekasten = {
     ["<leader>z"] = { "<cmd>Telekasten panel<CR>", "Open panel" },
 
     -- Most used functions
-    ["<leader>zn"] = { "<cmd>Telekasten new_note<CR>", "Make new note" },
+    ["<leader>zn"] = { "<cmd>Telekasten new_note<CR>", "New note" },
+    ["<leader>zt"] = { "<cmd>Telekasten new_templated_note<CR>", "New templated note" },
     ["<leader>zf"] = { "<cmd>Telekasten find_notes<CR>", "Find notes" },
     ["<leader>zg"] = { "<cmd>Telekasten search_notes<CR>", "Search note like grep" },
-    ["<leader>zt"] = { "<cmd>Telekasten goto_today<CR>", "Go to today" },
+    ["<leader>zd"] = { "<cmd>Telekasten goto_today<CR>", "Go to today" },
     ["<leader>zz"] = { "<cmd>Telekasten follow_link<CR>", "Follow link" },
     ["<leader>zc"] = { "<cmd>Telekasten show_calendar<CR>", "Show calendar" },
     ["<leader>zb"] = { "<cmd>Telekasten show_backlinks<CR>", "Show back links" },
