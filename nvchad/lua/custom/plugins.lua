@@ -39,6 +39,10 @@ local plugins = {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+  },
 
   -----------------------
   -- Better experience --
@@ -108,8 +112,8 @@ local plugins = {
   -- Note-takings
   {
     "renerocksai/telekasten.nvim",
-    lazy = false,
     dependencies = { "nvim-telescope/telescope.nvim" },
+    cmd = "Telekasten",
     config = function()
       require("telekasten").setup {
         home = vim.fn.expand "~/SecondBrain",

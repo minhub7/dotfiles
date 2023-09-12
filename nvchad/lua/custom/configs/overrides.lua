@@ -103,6 +103,9 @@ M.nvterm = {
   },
 }
 
+M.telescope = {
+  extensions_list = { "themes", "terms", "notify" },
+}
 
 -----------------------
 -- Better experience --
