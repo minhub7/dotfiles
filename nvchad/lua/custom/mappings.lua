@@ -32,7 +32,6 @@ M.disabled = {
     ["<leader>v"] = "",
 
     -- telescope
-    ["<leader>fw"] = "",
     ["<leader>cm"] = "",
   },
 
@@ -279,10 +278,7 @@ M.telescope = {
   plugin = true,
 
   n = {
-    ["<leader>fg"] = { "<cmd>Telescope live_grep <CR>", "Live grep" },
     ["<leader>fm"] = { "<cmd>Telescope media_files <CR>", "Find media files" },
-
-    -- git
     ["<leader>gc"] = { "<cmd>Telescope git_commits <CR>", "Git commits" },
   },
 }

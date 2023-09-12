@@ -3,6 +3,7 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     "vim",
+    "vimdoc",
     "lua",
     "html",
     "css",
@@ -37,10 +38,9 @@ M.mason = {
 
     -- rust
     "rust-analyzer",
-    -- "rustfmt", is deprecated
 
     -- dart
-    "dart_format",
+    "dart-debug-adapter",
   },
 }
 
