@@ -247,33 +247,6 @@ M.nvterm = {
   },
 }
 
-M.GotoPreview = {
-  n = {
-    ["gpd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "goto definition" },
-    ["gpt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "goto type definition" },
-    ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "goto implementation" },
-    ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "goto references" },
-    ["gq"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "all preview windows close" },
-  },
-}
-
-M.MarkdownPreview = {
-  n = {
-    ["<leader>mp"] = { "<cmd>MarkdownPreview<CR>", "Markdown preview" },
-  },
-}
-
-M.crates = {
-  n = {
-    ["<leader>uc"] = {
-      function()
-        require("crates").upgrade_all_crates()
-      end,
-      "update crates",
-    },
-  },
-}
-
 M.telescope = {
   plugin = true,
 
@@ -301,6 +274,33 @@ M.telekasten = {
 
   i = {
     ["[["] = { "<cmd>Telekasten insert_link<CR>", "Insert links" },
+  },
+}
+
+M.GotoPreview = {
+  n = {
+    ["gpd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "goto definition" },
+    ["gpt"] = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "goto type definition" },
+    ["gpi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "goto implementation" },
+    ["gpr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "goto references" },
+    ["gq"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "all preview windows close" },
+  },
+}
+
+M.MarkdownPreview = {
+  n = {
+    ["<leader>mp"] = { "<cmd>MarkdownPreview<CR>", "Markdown preview" },
+  },
+}
+
+M.crates = {
+  n = {
+    ["<leader>uc"] = {
+      function()
+        require("crates").upgrade_all_crates()
+      end,
+      "update crates",
+    },
   },
 }
 

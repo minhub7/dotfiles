@@ -43,6 +43,18 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
+  },
 
   -----------------------
   -- Better experience --
@@ -96,19 +108,6 @@ local plugins = {
     opts = overrides.copilot,
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = overrides.cmp,
-  },
-
   -- Note-takings
   {
     "renerocksai/telekasten.nvim",
@@ -132,7 +131,7 @@ local plugins = {
   {
     "nvim-telescope/telescope-media-files.nvim",
     config = function()
-      require("telescope").load_extension("media_files")
+      require("telescope").load_extension "media_files"
     end,
   },
 
