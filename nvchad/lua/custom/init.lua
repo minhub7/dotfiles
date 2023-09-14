@@ -2,7 +2,7 @@
 local opt = vim.opt
 
 vim.scriptencoding = "utf-8"
-vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_no_tab_map = true
 
 --------------------------------------------------
 

@@ -27,33 +27,30 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
+
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
+
   {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
+
   {
     "nvim-telescope/telescope.nvim",
     opts = overrides.telescope,
   },
+
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
   },
 
   -----------------------
@@ -99,13 +96,21 @@ local plugins = {
     },
   },
 
-  -- Copilot
+  -- codeium
   {
-    "zbirenbaum/copilot.lua",
-    lazy = false,
-    event = { "InsertEnter" },
-    cmd = { "Copilot" },
-    opts = overrides.copilot,
+    "jcdickinson/codeium.nvim",
+    event = "InsertEnter",
+    dependencies = {
+      {
+        "jcdickinson/http.nvim",
+        build = "cargo build --workspace --release",
+      },
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require("codeium").setup()
+    end,
   },
 
   -- Note-takings
