@@ -98,13 +98,13 @@ local plugins = {
 
   -- codeium
   {
-    "jcdickinson/codeium.nvim",
-    event = "InsertEnter",
+    "jcdickinson/http.nvim",
+    build = "cargo build --workspace --release",
+  },
+  {
+    "Exafunction/codeium.nvim",
     dependencies = {
-      {
-        "jcdickinson/http.nvim",
-        build = "cargo build --workspace --release",
-      },
+      "jcdickinson/http.nvim",
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
     },
