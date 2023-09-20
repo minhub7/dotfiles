@@ -41,6 +41,9 @@ M.mason = {
 
     -- dart
     "dart-debug-adapter",
+
+    -- shell
+    "beautysh",
   },
 }
 
