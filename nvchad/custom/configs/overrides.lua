@@ -86,10 +86,10 @@ M.cmp = {
     { name = "crates",   group_index = 2 },
   },
   mapping = {
-    ["<CR>"] = require("cmp").mapping.confirm {
+    ["<CR>"] = require("cmp").mapping.confirm({
       behavior = require("cmp").ConfirmBehavior.Insert,
       select = false,
-    },
+    }),
   },
 }
 
@@ -120,9 +120,12 @@ M.noice = {
     hover = { enabled = false },
     signature = { enabled = false },
   },
-  presets = {
-    long_message_to_split = true, -- long messages will be sent to a split
-    lsp_doc_border = true,        -- add a border to hover docs and signature help
+  presets = { long_message_to_split = true },
+  routes = {
+    {
+      view = "notify",
+      filter = { event = "msg_showmode" },
+    },
   },
 }
 
