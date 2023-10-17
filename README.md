@@ -69,7 +69,7 @@ git clone https://github.com/minocrafft/dotfiles.git
 - tmux
 - Copilot | Codeium (optional)
 
-#### zsh
+### zsh
 
 You have to install zshell and zplug and make a symbolic link for a 'zshrc' file.
 
@@ -77,7 +77,7 @@ You have to install zshell and zplug and make a symbolic link for a 'zshrc' file
 ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
 ```
 
-#### Neovim
+### Neovim
 
 _Linux_
 
@@ -126,7 +126,7 @@ And then, the `starship.toml` file link to `~./config` directory
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 ```
 
-#### tmux
+### tmux
 
 Settings for some key bindings in tmux.conf file
 Apply the tmux.conf file
