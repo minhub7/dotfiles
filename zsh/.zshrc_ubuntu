@@ -60,6 +60,10 @@ alias la="lsd -al --no-symlink"
 # Setup Environment Variables #
 #-----------------------------#
 
+# Set default editor for ranger
+export VISUAL=nvim
+export EDITOR=nvim
+
 # ZSH History
 setopt EXTENDED_HISTORY
 
