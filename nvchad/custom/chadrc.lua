@@ -2,7 +2,7 @@
 local M = {}
 
 -- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
+local highlights = require("custom.highlights")
 
 M.ui = {
   theme = "chadracula",
@@ -24,8 +24,7 @@ M.ui = {
   nvdash = {
     load_on_startup = true,
     header = {
-      [[                                                   ]],
-      [[                                              ___  ]],
+      [[                                               ... ]],
       [[                                           ,o88888 ]],
       [[                                        ,o8888888' ]],
       [[                  ,:o:o:oooo.        ,8O88Pd8888"  ]],
@@ -46,14 +45,13 @@ M.ui = {
       [[  . . . ...."'                                     ]],
       [[  .. . ."'                                         ]],
       [[ .                                                 ]],
-      [[                                                   ]],
-    }
+    },
   },
 }
 
 M.plugins = "custom.plugins"
 
 -- check core.mappings for table structure
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 
 return M
