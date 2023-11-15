@@ -77,7 +77,7 @@ M.cmp = {
     completeopt = "menu,menuone,noselect",
   },
   sources = {
-    { name = "codeium",  group_index = 2 },
+    { name = "codeium",  group_index = 2, priority = 100 },
     { name = "nvim_lsp", group_index = 2 },
     { name = "luasnip",  group_index = 2 },
     { name = "buffer",   group_index = 2 },

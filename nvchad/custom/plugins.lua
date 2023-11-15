@@ -100,6 +100,7 @@ local plugins = {
   {
     "Exafunction/codeium.nvim",
     cmd = "Codeium",
+    build = ":Codeium Auth",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
