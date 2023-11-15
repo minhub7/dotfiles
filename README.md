@@ -43,7 +43,7 @@ features.
 
 - [zplug](https://github.com/zplug/zplug)
 - [starship](https://starship.rs/)
-- [neovim](https://neovim.io/)
+- [neovim](https://neovim.io/) (with [NvChad](https://nvchad.com))
 - [tmux](https://github.com/tmux/tmux)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -54,58 +54,86 @@ features.
 
 ### Prerequisites
 
+_clone the repo_
+
+```sh
+git clone https://github.com/minocrafft/dotfiles.git
+```
+
 - snap
 - Nodejs
 - starship
 - zsh
   - zplug (for management zsh plugins)
-- Neovim >=0.8.1
-  - NvChad
+- Neovim == ^0.9.0
 - tmux
-- Copilot (optional)
+- Copilot | Codeium (optional)
 
-1. **zsh**
+### zsh
 
-    You have to install zshell and zplug and make a symbolic link for a 'zshrc' file.
-   
-2. **Neovim**
+You have to install zshell and zplug and make a symbolic link for a 'zshrc' file.
 
-   Recommended using snap
+```shell
+ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+```
 
-   ```sh
-   sudo apt-get install snap
-   snap install nvim --classic
-   ```
+### Neovim
 
-   or
+_Linux_
 
-   ```sh
-   sudo add-apt-repository ppa:neovim-ppa/stable
-   sudo apt-get update -y
-   sudo apt-get install neovim -y
-   ```
+```sh
+# Recommended using snap
+sudo apt-get install snap
+snap install nvim --classic
 
-3. **tmux**
+or
 
-   Settings for some key bindings in tmux.conf file
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update -y
+sudo apt-get install neovim -y
+```
 
-### Installation
+_macOS_
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/minocrafft/dotfiles.git
-   ```
-2. Make symbolic links for a few files
-   ```sh
-   cd dotfiles
-   ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
-   ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
-   ln -s ~/dotfiles/nvchad/ ~/.config/nvim
-   ```
-3. Apply the tmux.conf file
-   ```sh
-   tmux source-file tmux/tmux.conf
-   ```
+```shell
+brew install neovim
+```
+
+Clone the NvChad and make a symbolic link for a `nvchad/custom/` dir.
+
+```shell
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+ln -s ~/dotfiles/nvchad/custom ~/.config/nvim/lua/
+```
+
+### Starship
+
+_Linux or macOS_
+
+```shell
+curl -sS https://starship.rs/install.sh | sh
+```
+
+Add the following to the end of ~/.zshrc:
+
+```shell
+eval "$(starship init zsh)"
+```
+
+And then, the `starship.toml` file link to `~./config` directory
+
+```shell
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+```
+
+### tmux
+
+Settings for some key bindings in tmux.conf file
+Apply the tmux.conf file
+
+```sh
+tmux source-file tmux/tmux.conf
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
