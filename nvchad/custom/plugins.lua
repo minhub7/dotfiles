@@ -1,4 +1,4 @@
-local overrides = require "custom.configs.overrides"
+local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -13,13 +13,13 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require "custom.configs.null-ls"
+          require("custom.configs.null-ls")
         end,
       },
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end, -- Override to setup mason-lspconfig
   },
 
@@ -67,9 +67,9 @@ local plugins = {
   {
     "simrat39/symbols-outline.nvim",
     config = function()
-      require("symbols-outline").setup {
+      require("symbols-outline").setup({
         width = 15,
-      }
+      })
     end,
     keys = {
       { "<leader><Tab>", "<cmd>SymbolsOutline<CR>" },
@@ -79,10 +79,10 @@ local plugins = {
   {
     "rmagatti/goto-preview",
     config = function()
-      require("goto-preview").setup {
+      require("goto-preview").setup({
         width = 120,
         height = 40,
-      }
+      })
     end,
   },
 
@@ -116,24 +116,24 @@ local plugins = {
     dependencies = { "nvim-telescope/telescope.nvim" },
     cmd = "Telekasten",
     config = function()
-      require("telekasten").setup {
-        home = vim.fn.expand "~/SecondBrain",
-      }
+      require("telekasten").setup({
+        home = vim.fn.expand("~/SecondBrain"),
+      })
     end,
   },
 
   {
     "iamcco/markdown-preview.nvim",
-    lazy = false,
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
     build = "cd app && npm install",
-    ft = "markdown",
   },
 
   { "renerocksai/calendar-vim" },
   {
     "nvim-telescope/telescope-media-files.nvim",
     config = function()
-      require("telescope").load_extension "media_files"
+      require("telescope").load_extension("media_files")
     end,
   },
 
