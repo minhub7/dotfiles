@@ -49,13 +49,6 @@ local plugins = {
   },
 
   {
-    "onsails/lspkind.nvim",
-    config = function()
-      require("lspkind").init()
-    end
-  },
-
-  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-cmdline",
