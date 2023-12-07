@@ -45,6 +45,7 @@ M.disabled = {
   },
 }
 
+
 M.general = {
   n = {
     ["<tab>"] = { ">>", "Append indentation" },

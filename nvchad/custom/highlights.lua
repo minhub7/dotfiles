@@ -14,11 +14,6 @@ M.override = {
     bg = "none",
     fg = "pink",
   },
-
-  -- NvDashButtons = {
-  --   bg = "none",
-  --   fg = "white",
-  -- },
 }
 
 ---@type HLTable

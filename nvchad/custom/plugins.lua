@@ -3,9 +3,8 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
 
-  ----------------------------------------
-  -- Override plugin definition options --
-  ----------------------------------------
+  -- Override plugin definition options
+
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -13,19 +12,20 @@ local plugins = {
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
-          require("custom.configs.null-ls")
+          require "custom.configs.null-ls"
         end,
       },
     },
     config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
+  -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason,
+    opts = overrides.mason
   },
 
   {
@@ -49,8 +49,27 @@ local plugins = {
   },
 
   {
+    "onsails/lspkind.nvim",
+    config = function()
+      require("lspkind").init()
+    end
+  },
+
+  {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-cmdline",
+      "onsails/lspkind.nvim",
+    },
     opts = overrides.cmp,
+  },
+
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertEnter",
+    config = function()
+      require("better_escape").setup()
+    end,
   },
 
   -----------------------
@@ -99,8 +118,7 @@ local plugins = {
   -- codeium
   {
     "Exafunction/codeium.nvim",
-    cmd = "Codeium",
-    build = ":Codeium Auth",
+    event = "InsertEnter",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",

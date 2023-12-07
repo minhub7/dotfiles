@@ -57,7 +57,7 @@ end
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-null_ls.setup({
+null_ls.setup {
   debug = true,
   sources = sources,
   on_attach = function(client, bufnr)
@@ -72,4 +72,4 @@ null_ls.setup({
       })
     end
   end,
-})
+}

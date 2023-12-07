@@ -1,4 +1,5 @@
 -- local autocmd = vim.api.nvim_create_autocmd
+
 local opt = vim.opt
 
 vim.scriptencoding = "utf-8"

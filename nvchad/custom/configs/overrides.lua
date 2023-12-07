@@ -3,21 +3,21 @@ local M = {}
 M.treesitter = {
   ensure_installed = {
     "vim",
-    "vimdoc",
-    "lua",
-    "html",
-    "css",
-    "markdown",
-    "markdown_inline",
     "python",
     "rust",
     "dart",
+    "lua",
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "tsx",
+    "markdown",
+    "markdown_inline",
   },
   indent = {
     enable = true,
-    disable = {
-      "dart",
-    },
+    disable = { "dart" },
   },
 }
 
@@ -30,6 +30,7 @@ M.mason = {
     -- web dev stuff
     "css-lsp",
     "html-lsp",
+    "typescript-language-server",
     "prettierd",
 
     -- python
@@ -77,13 +78,13 @@ M.cmp = {
     completeopt = "menu,menuone,noselect",
   },
   sources = {
-    { name = "codeium",  group_index = 2, priority = 100 },
-    { name = "nvim_lsp", group_index = 2 },
-    { name = "luasnip",  group_index = 2 },
-    { name = "buffer",   group_index = 2 },
-    { name = "nvim_lua", group_index = 2 },
-    { name = "path",     group_index = 2 },
-    { name = "crates",   group_index = 2 },
+    { name = "codeium" },
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
+    { name = "crates" },
   },
   mapping = {
     ["<CR>"] = require("cmp").mapping.confirm({
@@ -91,6 +92,14 @@ M.cmp = {
       select = false,
     }),
   },
+  -- formatting = {
+  --   format = require("lspkind").cmp_format({
+  --     mode = "symbol",
+  --     maxwidth = 50,
+  --     ellipsis_char = "...",
+  --     symbol_map = { Codeium = "" },
+  --   }),
+  -- },
 }
 
 M.nvterm = {
