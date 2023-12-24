@@ -14,3 +14,12 @@ case $OS in
         source ./setup/macos.sh ;;
     *) ;;
 esac
+
+
+print_available
+while true; do
+    echo;
+    print_available_as_line "${PACKAGES[@]}"
+    read -p "Choose one: " response
+    execute $response "${PACKAGES[@]}"
+done
