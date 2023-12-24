@@ -1,12 +1,32 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#-----------------------------#
+# Setup Environment Variables #
+#-----------------------------#
+# ZSH History
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY  # equivalent of INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+export HISTTIMEFORMAT="[%F %T] "
+
 # ZSH_AUTO_SUGGEST_HIGHLIGHT_STYLE='fg=23'
+
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+antidote load
+autoload -Uz promptinit && promptinit
 
 # starship
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export EDITOR=nvim
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -29,25 +49,6 @@ alias ls="lsd --no-symlink"
 alias ll="lsd -l --no-symlink"
 alias lt="lsd --tree --no-symlink"
 alias la="lsd -al --no-symlink"
-
-#-----------------------------#
-# Setup Environment Variables #
-#-----------------------------#
-
-# Set default editor for ranger
-export VISUAL=nvim
-export EDITOR=nvim
-
-# ZSH History
-setopt EXTENDED_HISTORY
-setopt SHARE_HISTORY  # equivalent of INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_FIND_NO_DUPS
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
-export HISTTIMEFORMAT="[%F %T] "
 
 # cuda
 export PATH=/usr/local/cuda-11.7/bin:$PATH
@@ -72,11 +73,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
-antidote load

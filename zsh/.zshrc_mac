@@ -4,34 +4,34 @@ export PATH=/opt/homebrew/bin:$PATH
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# zplug configuration
-export ZPLUG=/opt/homebrew/opt/zplug
-source $ZPLUG/init.zsh
-zplug "zplug/zplug", hook-build:"zplug --self-manage"
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/sudo", from:oh-my-zsh
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/fzf-man-pages", from:oh-my-zsh
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zdharma/fast-syntax-highlighting"
-zplug load
+#-----------------------------#
+# Setup Environment Variables #
+#-----------------------------#
+# ZSH History
+setopt EXTENDED_HISTORY
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+export HISTFILE=~/.zsh_history
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+export HISTTIMEFORMAT="[%F %T] "
 
-ZSH_AUTO_SUGGEST_HIGHLIGHT_STYLE='fg=23'
+setopt INC_APPEND_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
+
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+autoload -Uz promptinit && promptinit
 
 # starship
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export EDITOR=nvim
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -69,22 +69,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-#-----------------------------#
-# Setup Environment Variables #
-#-----------------------------#
-# ZSH History
-setopt EXTENDED_HISTORY
-
-# export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
-export HISTTIMEFORMAT="[%F %T] "
-
-setopt SHARE_HISTORY  # equivalent of INC_APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_FIND_NO_DUPS
 
 # chruby ruby-3.1.2
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
