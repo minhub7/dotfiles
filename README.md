@@ -19,10 +19,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#about-the-project">About The Project</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#how-to-use">How to use?</a></li>
+    <li><a href="#currently-available-packages">Currently available packages</a></li>
+    <li><a href="#how-to-add-other-packages">How to add other packages?</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -37,9 +36,7 @@
 
 This is a dotfiles for beautiful and powerful features.
 
-<!-- GETTING STARTED -->
-
-## How to use?
+## How to use
 
 Just clone this repo
 
@@ -90,7 +87,7 @@ for MacOS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## How to add other packages?
+## How to add other packages
 
 If you want to append and manage some installation for the other packages,
 

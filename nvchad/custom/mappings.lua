@@ -81,14 +81,14 @@ M.tabufline = {
 
   n = {
     -- cycle through buffers
-    ["<A-l>"] = {
+    ["¬"] = {
       function()
         require("nvchad.tabufline").tabuflineNext()
       end,
       "Goto next buffer",
     },
 
-    ["<A-h>"] = {
+    ["˙"] = {
       function()
         require("nvchad.tabufline").tabuflinePrev()
       end,
@@ -96,7 +96,7 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["<A-q>"] = {
+    ["œ"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
