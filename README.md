@@ -29,130 +29,78 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+# Welcome to my dotfiles!
 
 <div align="center">
-  <img src="assets/starship.png" alt="starship" width="90%">
-  <img src="assets/nvim.png" alt="nvim" width="90%">
+  <img src="assets/dotfiles.png" alt="nvim" width="90%">
 </div>
 
-This project is a command prompt configuration for beautiful and powerful
-features.
-
-### Built With
-
-- [zplug](https://github.com/zplug/zplug)
-- [starship](https://starship.rs/)
-- [neovim](https://neovim.io/) (with [NvChad](https://nvchad.com))
-- [tmux](https://github.com/tmux/tmux)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+This is a dotfiles for beautiful and powerful features.
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## How to use?
 
-### Prerequisites
+Just clone this repo
 
-_clone the repo_
-
-```sh
+```bash
 git clone https://github.com/minocrafft/dotfiles.git
+
+cd dotfiles
 ```
 
-- snap
-- Nodejs
-- starship
-- zsh
-  - zplug (for management zsh plugins)
-- Neovim == ^0.9.0
-- tmux
-- Copilot | Codeium (optional)
+and run setup/install.sh as a bash, like
 
-### zsh
+```bash
+sudo chmod a+x setup/install.sh  # It may require permission to run.
 
-You have to install zshell and zplug and make a symbolic link for a 'zshrc' file.
-
-```shell
-ln -s ~/dotfiles/zsh/.zshrc ~/.zshrc
+bash setup/install.sh  # or ./setup/install.sh
 ```
 
-### Neovim
+then you can see a screen like this.
 
-_Linux_
+![installation](assets/installation.png)
 
-```sh
-# Recommended using snap
-sudo apt-get install snap
-snap install nvim --classic
+Now, you can choose the package you want to install and proceed with the configuration.
 
-or
+#### ⚠️ Cautions
 
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt-get update -y
-sudo apt-get install neovim -y
-```
-
-_macOS_
-
-```shell
-brew install neovim
-```
-
-Clone the NvChad and make a symbolic link for a `nvchad/custom/` dir.
-
-```shell
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-ln -s ~/dotfiles/nvchad/custom ~/.config/nvim/lua/
-```
-
-### Starship
-
-_Linux or macOS_
-
-```shell
-curl -sS https://starship.rs/install.sh | sh
-```
-
-Add the following to the end of ~/.zshrc:
-
-```shell
-eval "$(starship init zsh)"
-```
-
-And then, the `starship.toml` file link to `~./config` directory
-
-```shell
-ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
-```
-
-### tmux
-
-Settings for some key bindings in tmux.conf file
-Apply the tmux.conf file
-
-```sh
-tmux source-file tmux/tmux.conf
-```
+Some installations can be unstable because they were not tested in all environments.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
+## Currently available packages
 
-## Roadmap
+for Ubuntu
 
-- [x] Customize starship.toml
-- [ ] Search a useful plugins for zshell
+- zsh (with [anidote](https://github.com/mattmc3/antidote) as a plugin manager)
+- [starship](https://starship.rs/)
+- [neovim](https://neovim.io/) (with [NvChad](https://nvchad.com/))
+- [yazi](https://yazi-rs.github.io/)
+- [tmux](https://github.com/tmux/tmux/wiki)
+
+for MacOS
+
+- [Homebrew](https://brew.sh/ko/)
+- zsh (with [anidote](https://github.com/mattmc3/antidote) as a plugin manager)
+- [starship](https://starship.rs/)
+- [neovim](https://neovim.io/) (with [NvChad](https://nvchad.com/))
+- [yazi](https://yazi-rs.github.io/)
+- [tmux](https://github.com/tmux/tmux/wiki)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
+## How to add other packages?
 
-## License
+If you want to append and manage some installation for the other packages,
 
-Distributed under the MIT License. See `LICENSE` for more information.
+you can go through the following procedure.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- Add a new package name to the array of `PACKAGES` in setup/{OSTYPE}.sh
+- Add a package install function whose name starts with `install_` to setup/{OSTYPE}.sh
+- If necessary, change the `print_available` function as well
+
+That's it!
 
 <!-- CONTACT -->
 
